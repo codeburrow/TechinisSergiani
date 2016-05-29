@@ -10,5 +10,10 @@
     ],
     "require": {
         "corneltek/pux": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kourtis\\": "app/"
+        }
     }
 }
