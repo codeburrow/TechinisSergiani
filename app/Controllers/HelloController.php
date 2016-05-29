@@ -1,5 +1,6 @@
 <?php
 namespace Kourtis\Controllers;
+
 /**
  * Created by PhpStorm.
  * User: antony
@@ -7,16 +8,16 @@ namespace Kourtis\Controllers;
  * Time: 6:08 PM
  */
 
-class HelloController
+class HelloController extends Controller
 {
 
     public function __construct()
     {
-
+        parent::__construct();
     }
 
     public function index()
     {
-        echo 'hello there!';
+        echo $this->twig->render('index.htm', array('name' => 'Antony'));
     }
 }
