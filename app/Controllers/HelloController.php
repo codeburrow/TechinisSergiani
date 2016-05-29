@@ -1,5 +1,6 @@
 <?php
 namespace Kourtis\Controllers;
+use Interop\Container\ContainerInterface;
 
 /**
  * Created by PhpStorm.
@@ -11,12 +12,11 @@ namespace Kourtis\Controllers;
 class HelloController extends Controller
 {
 
-    public function __construct()
-    {
-        parent::__construct();
+    public function __construct(ContainerInterface $ci) {
+        parent::__construct($ci);
     }
 
-    public function index()
+    public function hello($request, $response, $args)
     {
         echo $this->twig->render('index.htm', array('name' => 'Antony'));
     }
