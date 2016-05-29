@@ -18,6 +18,6 @@ class HelloController extends Controller
 
     public function hello($request, $response, $args)
     {
-        echo $this->twig->render('index.htm', array('name' => 'Antony'));
+        echo $this->twig->render('index.twig', array('name' => 'Antony'));
     }
 }
