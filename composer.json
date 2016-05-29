@@ -1,0 +1,14 @@
+{
+    "name": "antony/technis-sergiani",
+    "description": "A web app for Alex Kourtis",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Antony Kalogeropoulos",
+            "email": "anthonykalogeropoulos@gmail.com"
+        }
+    ],
+    "require": {
+        "corneltek/pux": "^1.6"
+    }
+}
