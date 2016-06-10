@@ -8,28 +8,29 @@
 <!-- CSS
 ================================================== -->
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/bootstrap-responsive.css">
-<link rel="stylesheet" href="css/jquery.lightbox-0.5.css">
-<link rel="stylesheet" href="css/custom-styles.css">
+<link rel="stylesheet" href="../public/css/bootstrap.css">
+<link rel="stylesheet" href="../public/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="public/css/jquery.lightbox-0.5.css">
+<link rel="stylesheet" href="../public/css/custom-styles.css">
 
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <link rel="stylesheet" href="css/style-ie.css"/>
-<![endif]--> 
+    <link rel="stylesheet" href="../public/css/style-ie.css"/>
+    <![endif]-->
 
 <!-- Favicons
 ================================================== -->
-<link rel="shortcut icon" href="img/favicon.ico">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
+<link rel="shortcut icon" href="../public/img/favicon.ico">
+<link rel="apple-touch-icon" href="../public/img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../public/img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../public/img/apple-touch-icon-114x114.png">
+
 
 <!-- JS
 ================================================== -->
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.custom.js"></script>
+<script src="../public/js/bootstrap.js"></script>
+<script src="../public/js/jquery.custom.js"></script>
 
 
 </head>
@@ -45,7 +46,7 @@
         <!-- Logo
         ================================================== -->
         <div class="span5 logo">
-        	<a href="index.htm"><img src="img/piccolo-logo.png" alt="" /></a>
+        	<a href="../app/Views/index.twig"><img src="../public/img/piccolo-logo.png" alt="" /></a>
             <h5>Big Things... Small Packages</h5>
         </div>
         
@@ -56,9 +57,9 @@
             
             <ul class="nav">
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="index.htm">Home <b class="caret"></b></a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="../app/Views/index.twig">Home <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="index.htm">Full Page</a></li>
+                    <li><a href="../app/Views/index.twig">Full Page</a></li>
                     <li><a href="index-gallery.htm">Gallery Only</a></li>
                     <li><a href="index-slider.htm">Slider Only</a></li>
                 </ul>
@@ -141,67 +142,94 @@
 
         <!-- Blog Posts
         ================================================== --> 
-        <div class="span8 blog">
+        <div class="span9 blog">
 
-            <!-- Blog Post 1 -->
-            <article>
-                <div class="row">
-                    <div class="span2 blog-style-2">
-                        <h4 class="title-bg">09/04/15</h4>
-                        <ul class="post-data">
-                            <li><i class="icon-user"></i> <a href="#">Admin</a></li>
-                            <li><i class="icon-comment"></i> <a href="#">5 Comments</a></li>
-                            <li><i class="icon-tags"></i> <a href="#">photoshop</a>, <a href="#">tutorials</a>, <a href="#">illustration</a>, <a href="#">events</a></li>
-                        </ul>
-                        <button class="btn btn-small btn-inverse" type="button">Read more</button>
-                    </div>
-                    <div class="span6">       
-                        <a href="blog-single.htm"><img src="img/gallery/post-img-1.jpg" alt="Post Thumb"></a>
-                        <h3 class="title-bg"><a href="blog-single.htm">A subject that is beautiful in itself</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
-                    </div>    
-                </div>
-            </article>
+            <div class="row clearfix">
+                <ul class="blog-post-grid">
 
-            <!-- Blog Post 2 -->
-             <article>
-                <div class="row">
-                    <div class="span2 blog-style-2">
-                        <h4 class="title-bg">09/04/15</h4>
-                        <ul class="post-data">
-                            <li><i class="icon-user"></i> <a href="#">Admin</a></li>
-                            <li><i class="icon-comment"></i> <a href="#">5 Comments</a></li>
-                            <li><i class="icon-tags"></i> <a href="#">photoshop</a>, <a href="#">tutorials</a>, <a href="#">illustration</a>, <a href="#">events</a></li>
-                        </ul>
-                        <button class="btn btn-small btn-inverse" type="button">Read more</button>
-                    </div>
-                    <div class="span6">       
-                        <a href="blog-single.htm"><img src="img/gallery/post-img-1.jpg" alt="Post Thumb"></a>
-                        <h3 class="title-bg"><a href="blog-single.htm">A great artist is always before his time</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
-                    </div>    
-                </div>
-            </article>
+                    <!-- Blog Post 1 -->
+                    <li class="span3 blog-post-item">
+                        <div class="blog-post-hover hidden-phone hidden-tablet">
+                            <p><a href="blog-single.htm" class="clearfix">A subject that is beautiful in itself</a>
+                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
+                        </div>
+                        <a href="blog-single.htm"><img src="../public/img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
+                    </li>
 
-             <!-- Blog Post 3 -->
-             <article>
-                <div class="row">
-                    <div class="span2 blog-style-2">
-                        <h4 class="title-bg">09/04/15</h4>
-                        <ul class="post-data">
-                            <li><i class="icon-user"></i> <a href="#">Admin</a></li>
-                            <li><i class="icon-comment"></i> <a href="#">5 Comments</a></li>
-                            <li><i class="icon-tags"></i> <a href="#">photoshop</a>, <a href="#">tutorials</a>, <a href="#">illustration</a>, <a href="#">events</a></li>
-                        </ul>
-                        <button class="btn btn-small btn-inverse" type="button">Read more</button>
-                    </div>
-                    <div class="span6">       
-                        <a href="blog-single.htm"><img src="img/gallery/post-img-1.jpg" alt="Post Thumb"></a>
-                        <h3 class="title-bg"><a href="blog-single.htm">Is art everything to anybody?</a></h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
-                    </div>    
-                </div>
-            </article>
+                    <!-- Blog Post 2 -->
+                    <li class="span3 blog-post-item">
+                        <div class="blog-post-hover hidden-phone hidden-tablet">
+                            <p><a href="blog-single.htm" class="clearfix">A great artist is always before his time</a>
+                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
+                        </div>
+                        <a href="blog-single.htm"><img src="../public/img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
+                    </li>
+
+                    <!-- Blog Post 3 -->
+                    <li class="span3 blog-post-item">
+                        <div class="blog-post-hover hidden-phone hidden-tablet">
+                            <p><a href="blog-single.htm" class="clearfix">Is art everything to anybody?</a>
+                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
+                        </div>
+                        <a href="blog-single.htm"><img src="../public/img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
+                    </li>
+
+                     <!-- Blog Post 4 -->
+                    <li class="span3 blog-post-item">
+                        <div class="blog-post-hover hidden-phone hidden-tablet">
+                            <p><a href="blog-single.htm" class="clearfix">A subject that is beautiful in itself</a>
+                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
+                        </div>
+                        <a href="blog-single.htm"><img src="../public/img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
+                    </li>
+
+                    <!-- Blog Post 5 -->
+                    <li class="span3 blog-post-item">
+                        <div class="blog-post-hover hidden-phone hidden-tablet">
+                            <p><a href="blog-single.htm" class="clearfix">A great artist is always before his time</a>
+                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
+                        </div>
+                        <a href="blog-single.htm"><img src="../public/img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
+                    </li>
+
+                    <!-- Blog Post 6 -->
+                    <li class="span3 blog-post-item">
+                        <div class="blog-post-hover hidden-phone hidden-tablet">
+                            <p><a href="blog-single.htm" class="clearfix">Is art everything to anybody?</a>
+                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
+                        </div>
+                        <a href="blog-single.htm"><img src="../public/img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
+                    </li>
+
+                     <!-- Blog Post 7 -->
+                    <li class="span3 blog-post-item">
+                        <div class="blog-post-hover hidden-phone hidden-tablet">
+                            <p><a href="blog-single.htm" class="clearfix">A subject that is beautiful in itself</a>
+                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
+                        </div>
+                       <a href="blog-single.htm"><img src="../public/img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
+                    </li>
+
+                    <!-- Blog Post 8 -->
+                    <li class="span3 blog-post-item">
+                        <div class="blog-post-hover hidden-phone hidden-tablet">
+                            <p><a href="blog-single.htm" class="clearfix">A great artist is always before his time</a>
+                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
+                        </div>
+                        <a href="blog-single.htm"><img src="../public/img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
+                    </li>
+
+                    <!-- Blog Post 9 -->
+                    <li class="span3 blog-post-item">
+                        <div class="blog-post-hover hidden-phone hidden-tablet">
+                            <p><a href="blog-single.htm" class="clearfix">Is art everything to anybody?</a>
+                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
+                        </div>
+                        <a href="blog-single.htm"><img src="../public/img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
+                    </li>
+
+                </ul>
+            </div>
 
             <!-- Pagination -->
             <div class="pagination">
@@ -218,7 +246,7 @@
 
         <!-- Blog Sidebar
         ================================================== --> 
-        <div class="span4 sidebar">
+        <div class="span3 sidebar">
 
             <!--Search-->
             <section>
@@ -238,26 +266,8 @@
                 <li><a href="#"><i class="icon-plus-sign"></i>News</a></li>
             </ul>
 
-            <!--Popular Posts-->
-            <h5 class="title-bg">Popular Posts</h5>
-            <ul class="popular-posts">
-                <li>
-                    <a href="#"><img src="img/gallery/gallery-img-2-thumb.jpg" alt="Popular Post"></a>
-                    <h6><a href="#">Lorem ipsum dolor sit amet consectetur adipiscing elit</a></h6>
-                    <em>Posted on 09/01/15</em>
-                </li>
-                <li>
-                    <a href="#"><img src="img/gallery/gallery-img-2-thumb.jpg" alt="Popular Post"></a>
-                    <h6><a href="#">Nulla iaculis mattis lorem, quis gravida nunc iaculis</a></h6>
-                    <em>Posted on 09/01/15</em>
-                <li>
-                    <a href="#"><img src="img/gallery/gallery-img-2-thumb.jpg" alt="Popular Post"></a>
-                    <h6><a href="#">Vivamus tincidunt sem eu magna varius elementum maecenas felis</a></h6>
-                    <em>Posted on 09/01/15</em>
-                </li>
-            </ul>
-
             <!--Tabbed Content-->
+            <section class="visible-desktop">
             <h5 class="title-bg">More Info</h5>
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#comments" data-toggle="tab">Comments</a></li>
@@ -290,10 +300,8 @@
                     Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
                 </div>
             </div>
+            </section>
 
-            <!--Video Widget-->
-            <h5 class="title-bg">Video Widget</h5>
-            <iframe src="http://player.vimeo.com/video/24496773" width="370" height="208"></iframe>
         </div>
 
     </div>
@@ -307,7 +315,7 @@
         	<div class="row footer-row">
                 <div class="span3 footer-col">
                     <h5>About Us</h5>
-                   <img src="img/piccolo-footer-logo.png" alt="Piccolo" /><br /><br />
+                   <img src="../public/img/piccolo-footer-logo.png" alt="Piccolo" /><br /><br />
                     <address>
                         <strong>Design Team</strong><br />
                         123 Main St, Suite 500<br />
@@ -342,18 +350,18 @@
                 <div class="span3 footer-col">
                     <h5>Flickr Photos</h5>
                     <ul class="img-feed">
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
                     </ul>
                 </div>
             </div>
@@ -372,7 +380,7 @@
             </div><!-- End Sub Footer -->
 
         </div>
-    </div><!-- End Footer --> 
+    </div><!-- End Footer -->
 
     <!-- Scroll to Top -->  
     <div id="toTop" class="hidden-phone hidden-tablet">Back to Top</div>

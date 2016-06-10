@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% block head %}
+        {{ include('head.twig') }}
+        <title> {% block title %}{% endblock %} </title>
+    {% endblock %}
+</head>
+<body class="home">
+    {% block content %}
+        {% block footer %}{% endblock %}
+    {% endblock %}
+</body>
+</html>

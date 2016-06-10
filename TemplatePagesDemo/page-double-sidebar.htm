@@ -8,29 +8,28 @@
 <!-- CSS
 ================================================== -->
 <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/bootstrap-responsive.css">
-<link rel="stylesheet" href="css/jquery.lightbox-0.5.css">
-<link rel="stylesheet" href="css/custom-styles.css">
+<link rel="stylesheet" href="../public/css/bootstrap.css">
+<link rel="stylesheet" href="../public/css/bootstrap-responsive.css">
+<link rel="stylesheet" href="public/css/jquery.lightbox-0.5.css">
+<link rel="stylesheet" href="../public/css/custom-styles.css">
 
 <!--[if lt IE 9]>
     <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <link rel="stylesheet" href="css/style-ie.css"/>
-<![endif]--> 
+    <link rel="stylesheet" href="../public/css/style-ie.css"/>
+    <![endif]-->
 
 <!-- Favicons
 ================================================== -->
-<link rel="shortcut icon" href="img/favicon.ico">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png">
-
+<link rel="shortcut icon" href="../public/img/favicon.ico">
+<link rel="apple-touch-icon" href="../public/img/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../public/img/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../public/img/apple-touch-icon-114x114.png">
 
 <!-- JS
 ================================================== -->
 <script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-<script src="js/bootstrap.js"></script>
-<script src="js/jquery.custom.js"></script>
+<script src="../public/js/bootstrap.js"></script>
+<script src="../public/js/jquery.custom.js"></script>
 
 
 </head>
@@ -46,7 +45,7 @@
         <!-- Logo
         ================================================== -->
         <div class="span5 logo">
-        	<a href="index.htm"><img src="img/piccolo-logo.png" alt="" /></a>
+        	<a href="../app/Views/index.twig"><img src="../public/img/piccolo-logo.png" alt="" /></a>
             <h5>Big Things... Small Packages</h5>
         </div>
         
@@ -57,15 +56,15 @@
             
             <ul class="nav">
             <li class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" href="index.htm">Home <b class="caret"></b></a>
+                <a class="dropdown-toggle" data-toggle="dropdown" href="../app/Views/index.twig">Home <b class="caret"></b></a>
                 <ul class="dropdown-menu">
-                    <li><a href="index.htm">Full Page</a></li>
+                    <li><a href="../app/Views/index.twig">Full Page</a></li>
                     <li><a href="index-gallery.htm">Gallery Only</a></li>
                     <li><a href="index-slider.htm">Slider Only</a></li>
                 </ul>
             </li>
            <li><a href="features.htm">Features</a></li>
-            <li class="dropdown">
+            <li class="dropdown active">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="page-full-width.htm">Pages <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="page-full-width.htm">Full Width</a></li>
@@ -84,7 +83,7 @@
                     <li><a href="gallery-single.htm">Gallery Single</a></li>
                 </ul>
              </li>
-             <li class="dropdown active">
+             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="blog-style1.htm">Blog <b class="caret"></b></a>
                 <ul class="dropdown-menu">
                     <li><a href="blog-style1.htm">Blog Style 1</a></li>
@@ -133,141 +132,95 @@
                 </form>
             
         </div>
-
+        
       </div><!-- End Header -->
      
-    <!-- Blog Content
+    <!-- Page Content
     ================================================== --> 
-    <div class="row">
+    <div class="row"><!--Container row-->
 
-        <!-- Blog Posts
+        <!-- Page Left Sidebar
         ================================================== --> 
-        <div class="span9 blog">
+        <div class="span3 sidebar page-left-sidebar"><!-- Begin sidebar column -->
 
-            <div class="row clearfix">
-                <ul class="blog-post-grid">
-
-                    <!-- Blog Post 1 -->
-                    <li class="span3 blog-post-item">
-                        <div class="blog-post-hover hidden-phone hidden-tablet">
-                            <p><a href="blog-single.htm" class="clearfix">A subject that is beautiful in itself</a>
-                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
-                        </div>
-                        <a href="blog-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
-                    </li>
-
-                    <!-- Blog Post 2 -->
-                    <li class="span3 blog-post-item">
-                        <div class="blog-post-hover hidden-phone hidden-tablet">
-                            <p><a href="blog-single.htm" class="clearfix">A great artist is always before his time</a>
-                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
-                        </div>
-                        <a href="blog-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
-                    </li>
-
-                    <!-- Blog Post 3 -->
-                    <li class="span3 blog-post-item">
-                        <div class="blog-post-hover hidden-phone hidden-tablet">
-                            <p><a href="blog-single.htm" class="clearfix">Is art everything to anybody?</a>
-                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
-                        </div>
-                        <a href="blog-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
-                    </li>
-
-                     <!-- Blog Post 4 -->
-                    <li class="span3 blog-post-item">
-                        <div class="blog-post-hover hidden-phone hidden-tablet">
-                            <p><a href="blog-single.htm" class="clearfix">A subject that is beautiful in itself</a>
-                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
-                        </div>
-                        <a href="blog-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
-                    </li>
-
-                    <!-- Blog Post 5 -->
-                    <li class="span3 blog-post-item">
-                        <div class="blog-post-hover hidden-phone hidden-tablet">
-                            <p><a href="blog-single.htm" class="clearfix">A great artist is always before his time</a>
-                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
-                        </div>
-                        <a href="blog-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
-                    </li>
-
-                    <!-- Blog Post 6 -->
-                    <li class="span3 blog-post-item">
-                        <div class="blog-post-hover hidden-phone hidden-tablet">
-                            <p><a href="blog-single.htm" class="clearfix">Is art everything to anybody?</a>
-                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
-                        </div>
-                        <a href="blog-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
-                    </li>
-
-                     <!-- Blog Post 7 -->
-                    <li class="span3 blog-post-item">
-                        <div class="blog-post-hover hidden-phone hidden-tablet">
-                            <p><a href="blog-single.htm" class="clearfix">A subject that is beautiful in itself</a>
-                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
-                        </div>
-                       <a href="blog-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
-                    </li>
-
-                    <!-- Blog Post 8 -->
-                    <li class="span3 blog-post-item">
-                        <div class="blog-post-hover hidden-phone hidden-tablet">
-                            <p><a href="blog-single.htm" class="clearfix">A great artist is always before his time</a>
-                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
-                        </div>
-                        <a href="blog-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
-                    </li>
-
-                    <!-- Blog Post 9 -->
-                    <li class="span3 blog-post-item">
-                        <div class="blog-post-hover hidden-phone hidden-tablet">
-                            <p><a href="blog-single.htm" class="clearfix">Is art everything to anybody?</a>
-                            posted on 9/01/15<br /> 12 comments<br /> posted in photoshop</p>
-                        </div>
-                        <a href="blog-single.htm"><img src="img/gallery/gallery-img-1-4col.jpg" alt="Post Thumb"></a>
-                    </li>
-
-                </ul>
-            </div>
-
-            <!-- Pagination -->
-            <div class="pagination">
-                <ul>
-                <li class="active"><a href="#">Prev</a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">Next</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Blog Sidebar
-        ================================================== --> 
-        <div class="span3 sidebar">
-
-            <!--Search-->
-            <section>
-                <div class="input-append">
-                    <form action="#">
-                        <input id="appendedInputButton" size="16" type="text" placeholder="Search"><button class="btn" type="button"><i class="icon-search"></i></button>
-                    </form>
-                </div>
-            </section>
-
-            <!--Categories-->
-            <h5 class="title-bg">Categories</h5>
+            <!--Navigation-->
+            <h5 class="title-bg">Navigation</h5>
             <ul class="post-category-list">
-                <li><a href="#"><i class="icon-plus-sign"></i>Design</a></li>
-                <li><a href="#"><i class="icon-plus-sign"></i>Illustration</a></li>
-                <li><a href="#"><i class="icon-plus-sign"></i>Tutorials</a></li>
-                <li><a href="#"><i class="icon-plus-sign"></i>News</a></li>
+                <li><a href="#"><i class="icon-plus-sign"></i>About Us</a></li>
+                <li><a href="#"><i class="icon-plus-sign"></i>Services</a></li>
+                <li><a href="#"><i class="icon-plus-sign"></i>Mission</a></li>
+                <li><a href="#"><i class="icon-plus-sign"></i>Clients</a></li>
             </ul>
 
-            <!--Tabbed Content-->
-            <section class="visible-desktop">
+            <!--Latest News-->
+            <h5 class="title-bg">Latest News</h5>
+            <ul class="popular-posts">
+                <li>
+                    <a href="#"><img src="../public/img/gallery/gallery-img-2-thumb.jpg" alt="Popular Post"></a>
+                    <h6><a href="#">Lorem ipsum dolor sit amet consectetur adipiscing elit</a></h6>
+                    <em>Posted on 09/01/15</em>
+                </li>
+                <li>
+                    <a href="#"><img src="../public/img/gallery/gallery-img-2-thumb.jpg" alt="Popular Post"></a>
+                    <h6><a href="#">Nulla iaculis mattis lorem, quis gravida nunc iaculis</a></h6>
+                    <em>Posted on 09/01/15</em>
+                <li>
+                    <a href="#"><img src="../public/img/gallery/gallery-img-2-thumb.jpg" alt="Popular Post"></a>
+                    <h6><a href="#">Vivamus tincidunt sem eu magna varius elementum</a></h6>
+                    <em>Posted on 09/01/15</em>
+                </li>
+            </ul>
+
+            <!--Testimonials-->
+            <h5 class="title-bg">Testimonials</h5>
+    
+            <p class="quote-text side">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In interdum felis fermentum."<cite>- Client Name, Big Company</cite></p>
+        
+            <p class="quote-text side">"Adipiscing elit. In interdum felis fermentum ipsum molestie sed porttitor ligula rutrum."<cite>- Another Client Name, Big Company</cite></p>
+                
+
+        </div><!-- End sidebar column -->
+
+        <!-- Page Content
+        ================================================== --> 
+        <div class="span6"><!--Begin page content column-->
+
+            <h2 class="title-bg">Double Sidebar Example</h2>
+
+            <img src="../public/img/gallery/gallery-img-1-full.jpg" alt="Image">
+
+            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie.</p>
+
+            <div class="row">
+                <div class="span3">
+                    <h5>2 Column Layout</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
+                    <button class="btn btn-mini btn-inverse" type="button">Read more</button>
+                </div>
+                <div class="span3">
+                    <h5>2 Column Layout</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
+                    <button class="btn btn-mini btn-inverse" type="button">Read more</button>
+                </div>
+            </div>
+
+        </div> <!--End page content column--> 
+
+         <!-- Page Right Sidebar
+        ================================================== --> 
+        <div class="span3 sidebar page-right-sidebar"><!-- Begin sidebar column -->
+
+            <!--User Login-->
+            <h5 class="title-bg">User Login</h5>
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-user"></i></span><input class="span2" id="prependedInput" size="16" type="text" placeholder="Username">
+            </div>
+            <div class="input-prepend">
+                <span class="add-on"><i class="icon-lock"></i></span><input class="span2" id="appendedPrependedInput" size="16" type="text" placeholder="Password">
+            </div>
+            <button class="btn btn-small btn-inverse" type="button">Login</button>
+
+             <!--Tabbed Content-->
             <h5 class="title-bg">More Info</h5>
             <ul class="nav nav-tabs">
                 <li class="active"><a href="#comments" data-toggle="tab">Comments</a></li>
@@ -300,22 +253,37 @@
                     Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et.
                 </div>
             </div>
-            </section>
 
-        </div>
+            <!--Progress Bars-->
+            <h5 class="title-bg">Progress Bars</h5> 
+            <div class="progress progress-info progress-striped">
+                <div class="bar" style="width: 20%"></div>
+            </div>
+            <div class="progress progress-success progress-striped">
+                <div class="bar" style="width: 40%"></div>
+            </div>
+            <div class="progress progress-warning progress-striped">
+                <div class="bar" style="width: 60%"></div>
+            </div>
+            <div class="progress progress-danger progress-striped">
+                <div class="bar" style="width: 80%"></div>
+            </div>
 
-    </div>
+        </div><!-- End sidebar column -->
+
+    </div><!-- End container row -->
     
     </div> <!-- End Container -->
 
     <!-- Footer Area
         ================================================== -->
+
 	<div class="footer-container"><!-- Begin Footer -->
     	<div class="container">
         	<div class="row footer-row">
                 <div class="span3 footer-col">
                     <h5>About Us</h5>
-                   <img src="img/piccolo-footer-logo.png" alt="Piccolo" /><br /><br />
+                   <img src="../public/img/piccolo-footer-logo.png" alt="Piccolo" /><br /><br />
                     <address>
                         <strong>Design Team</strong><br />
                         123 Main St, Suite 500<br />
@@ -350,18 +318,18 @@
                 <div class="span3 footer-col">
                     <h5>Flickr Photos</h5>
                     <ul class="img-feed">
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
-                        <li><a href="#"><img src="img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
+                        <li><a href="#"><img src="../public/img/gallery/flickr-img-1.jpg" alt="Image Feed"></a></li>
                     </ul>
                 </div>
             </div>
