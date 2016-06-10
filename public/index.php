@@ -1,16 +1,19 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: antony
- * Date: 5/29/16
- * Time: 5:49 PM
- */
-require __DIR__ . '/../vendor/autoload.php';
-require __DIR__ . '/../app/setup.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../app/setup.php';
 
-use Kourtis\Controllers\HelloController;
+use Kourtis\Controllers;
+use Kourtis\Router;
 
-$app = new \Slim\App;
-$app->get('/hello', 'Kourtis\Controllers\HelloController:hello');
-$app->run();
+$router = new Router\Router();
+
+$router->get('/', 'HelloController', 'hello');
+$router->get('/contact', 'ContactController', 'contactDetails');
+$router->post('/contact', 'ContactController', 'postContactDetails');
+
+////See inside $router
+//echo "<pre>";
+//print_r($router);
+
+$router->submit();
 
