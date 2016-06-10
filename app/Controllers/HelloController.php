@@ -1,16 +1,17 @@
 <?php
 namespace Kourtis\Controllers;
 
-class HelloController
+class HelloController extends Controller
 {
 
     public function __construct()
     {
+        parent::__construct();
     }
 
     public function hello()
     {
-        include __DIR__ . '/../Views/index.twig';
+        echo $this->twig->render('index.twig', array('name' => 'Antony'));
     }
     
 }
