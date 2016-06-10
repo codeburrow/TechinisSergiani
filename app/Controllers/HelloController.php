@@ -13,5 +13,10 @@ class HelloController extends Controller
     {
         echo $this->twig->render('index.twig', array('name' => 'Antony'));
     }
+
+    public function contact()
+    {
+        echo $this->twig->render('contact.twig');
+    }
     
 }

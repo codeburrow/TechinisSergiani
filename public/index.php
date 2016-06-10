@@ -8,8 +8,8 @@ use Kourtis\Router;
 $router = new Router\Router();
 
 $router->get('/', 'HelloController', 'hello');
-$router->get('/contact', 'ContactController', 'contactDetails');
-$router->post('/contact', 'ContactController', 'postContactDetails');
+$router->get('/contact', 'HelloController', 'contact');
+//$router->post('/contact', 'ContactController', 'postContactDetails');
 
 ////See inside $router
 //echo "<pre>";
