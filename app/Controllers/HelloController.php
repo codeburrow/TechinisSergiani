@@ -18,5 +18,10 @@ class HelloController extends Controller
     {
         echo $this->twig->render('contact.twig');
     }
+
+    public function single_post()
+    {
+        echo $this->twig->render('single_post.twig');
+    }
     
 }
