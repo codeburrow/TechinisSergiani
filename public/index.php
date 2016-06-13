@@ -9,7 +9,8 @@ $router = new Router\Router();
 
 $router->get('/', 'HelloController', 'hello');
 $router->get('/contact', 'HelloController', 'contact');
-$router->get('/single_post', 'HelloController', 'single_post');
+$router->get('/single_post', 'PostsController', 'single_post');
+$router->get('/post_list', 'PostsController', 'showAllPosts');
 //$router->post('/contact', 'ContactController', 'postContactDetails');
 
 ////See inside $router
