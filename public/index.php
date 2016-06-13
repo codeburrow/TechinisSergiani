@@ -7,8 +7,8 @@ use Kourtis\Router;
 
 $router = new Router\Router();
 
-$router->get('/', 'HelloController', 'hello');
-$router->get('/contact', 'HelloController', 'contact');
+$router->get('/', 'MainController', 'hello');
+$router->get('/contact', 'MainController', 'contact');
 $router->get('/single_post', 'PostsController', 'single_post');
 $router->get('/post_list', 'PostsController', 'showAllPosts');
 //$router->post('/contact', 'ContactController', 'postContactDetails');

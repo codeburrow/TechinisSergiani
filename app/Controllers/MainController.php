@@ -1,7 +1,7 @@
 <?php
 namespace Kourtis\Controllers;
 
-class HelloController extends Controller
+class MainController extends Controller
 {
 
     public function __construct()
