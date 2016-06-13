@@ -18,5 +18,10 @@ class MainController extends Controller
     {
         echo $this->twig->render('contact.twig');
     }
+
+    public function postContactDetails()
+    {
+        var_dump($_POST);
+    }
     
 }

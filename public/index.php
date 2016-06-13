@@ -11,7 +11,7 @@ $router->get('/', 'MainController', 'hello');
 $router->get('/contact', 'MainController', 'contact');
 $router->get('/single_post', 'PostsController', 'single_post');
 $router->get('/post_list', 'PostsController', 'showAllPosts');
-//$router->post('/contact', 'ContactController', 'postContactDetails');
+$router->post('/contact', 'MainController', 'postContactDetails');
 
 ////See inside $router
 //echo "<pre>";
