@@ -9,7 +9,7 @@ class MainController extends Controller
         parent::__construct();
     }
 
-    public function hello()
+    public function index()
     {
         echo $this->twig->render('index.twig', array('name' => 'Antony'));
     }
