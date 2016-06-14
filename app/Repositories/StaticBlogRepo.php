@@ -17,14 +17,14 @@ class StaticBlogRepo
                 'title' => 'A subject that is beautiful in itself',
                 'summary' => 'And this is a nice summary of what I am going to describe in the full article for you
                                 guys. Don\'t worry about it, just dive in.',
-                'photo' => 'img/test/asd5.png',
+                'photo' => 'img/test/asd5.jpg',
             ],
 
             [
                 'title' => 'Is art everything to anybody?',
                 'summary' => 'And this is a nice summary of what I am going to describe in the full article for you
                                 guys. Don\'t worry about it, just dive in.',
-                'photo' => 'img/test/asd2.png',
+                'photo' => 'img/test/asd2.jpg',
             ],
 
             [
@@ -45,7 +45,7 @@ class StaticBlogRepo
                 'title' => 'Is art everything to anybody?',
                 'summary' => 'And this is a nice summary of what I am going to describe in the full article for you
                                 guys. Don\'t worry about it, just dive in.',
-                'photo' => 'img/test/asd1.png',
+                'photo' => 'img/test/asd1.jpg',
             ],
 
             [
@@ -59,21 +59,21 @@ class StaticBlogRepo
                 'title' => 'A subject that is beautiful in itself',
                 'summary' => 'And this is a nice summary of what I am going to describe in the full article for you
                                 guys. Don\'t worry about it, just dive in.',
-                'photo' => 'img/test/asd7.png',
+                'photo' => 'img/test/asd7.jpg',
             ],
 
             [
                 'title' => 'A great artist is always before his time',
                 'summary' => 'And this is a nice summary of what I am going to describe in the full article for you
                                 guys. Don\'t worry about it, just dive in.',
-                'photo' => 'img/test/asd5.png',
+                'photo' => 'img/test/asd5.jpg',
             ],
 
             [
                 'title' => 'A subject that is beautiful in itself',
                 'summary' => 'And this is a nice summary of what I am going to describe in the full article for you
                                 guys. Don\'t worry about it, just dive in.',
-                'photo' => 'img/test/asd2.png',
+                'photo' => 'img/test/asd2.jpg',
             ],
 
             [

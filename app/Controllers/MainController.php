@@ -1,8 +1,6 @@
 <?php
 namespace Kourtis\Controllers;
 
-use Kourtis\Repositories\StaticBlogRepo;
-
 class MainController extends Controller
 {
 
@@ -24,15 +22,6 @@ class MainController extends Controller
     public function postContactDetails()
     {
         var_dump($_POST);
-    }
-
-    public function test()
-    {
-        $repo = new StaticBlogRepo();
-
-        $result = $repo->getAllPosts();
-
-        var_dump($result);
     }
     
 }
