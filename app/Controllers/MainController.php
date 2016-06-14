@@ -1,6 +1,8 @@
 <?php
 namespace Kourtis\Controllers;
 
+use Kourtis\Database\DB;
+
 class MainController extends Controller
 {
 
@@ -22,6 +24,13 @@ class MainController extends Controller
     public function postContactDetails()
     {
         var_dump($_POST);
+    }
+    
+    public function test()
+    {
+        $myDB = new DB();
+
+        $myDB->connect();
     }
     
 }
