@@ -11,6 +11,7 @@ class DB
     protected $dbname;
     protected $username;
     protected $password;
+    protected $conn;
 
     /**
      * DB constructor. By default connect to Homestead virtual DB server and to the 'kourtis' database schema.
@@ -27,6 +28,8 @@ class DB
         $this->dbname = $dbname;
         $this->username = $username;
         $this->password = $password;
+
+        $this->connect();
     }
 
     public function connect()
@@ -35,10 +38,22 @@ class DB
             $conn = new PDO("mysql:host=$this->servername;port:$this->port;dbname=$this->servername", $this->username, $this->password);
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connected successfully";
+            $this->conn = $conn;
+//            echo "Connected successfully";
         } catch (PDOException $e) {
             echo "Connection failed: " . $e->getMessage();
         }
+    }
+
+    public function getAllPosts()
+    {
+        $stmt = $this->conn->prepare("SELECT * FROM kourtis.posts");
+        $stmt->execute();
+
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll();
+        var_dump($result);
     }
 
 }

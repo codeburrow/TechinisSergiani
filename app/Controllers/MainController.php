@@ -30,7 +30,7 @@ class MainController extends Controller
     {
         $myDB = new DB();
 
-        $myDB->connect();
+        $myDB->getAllPosts();
     }
     
 }
