@@ -1,7 +1,7 @@
 <?php
 namespace Kourtis\Controllers;
 
-use Kourtis\Repositories\StaticBlogRepo;
+use Kourtis\Database\DB;
 
 class PostsController extends Controller
 {
@@ -10,14 +10,16 @@ class PostsController extends Controller
     public function __construct()
     {
         parent::__construct();
-        $this->staticBlogRepo = new StaticBlogRepo();
     }
 
     public function showAllPosts()
     {
-        $posts = $this->staticBlogRepo->getAllPosts();
+        $myDB = new DB();
+
+        $posts = $myDB->getAllPosts();
 
         echo $this->twig->render( 'post_list.twig', array('posts' => $posts) );
+
     }
 
     public function single_post()

@@ -53,7 +53,7 @@ class DB
         // set the resulting array to associative
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $result = $stmt->fetchAll();
-        var_dump($result);
+        return $result;
     }
 
 }

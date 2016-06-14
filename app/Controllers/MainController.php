@@ -26,11 +26,4 @@ class MainController extends Controller
         var_dump($_POST);
     }
     
-    public function test()
-    {
-        $myDB = new DB();
-
-        $myDB->getAllPosts();
-    }
-    
 }
