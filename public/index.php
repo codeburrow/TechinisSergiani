@@ -11,6 +11,9 @@ $router->get('/', 'MainController', 'hello');
 $router->get('/contact', 'MainController', 'contact');
 $router->get('/single_post', 'PostsController', 'single_post');
 $router->get('/post_list', 'PostsController', 'showAllPosts');
+$router->get('/test', 'MainController', 'test');
+
+
 $router->post('/contact', 'MainController', 'postContactDetails');
 
 ////See inside $router
