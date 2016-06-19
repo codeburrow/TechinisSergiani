@@ -11,12 +11,10 @@
         <div class="span8">
             <div class="flexslider">
                 <ul class="slides">
-                    <li><a href="../../Template%20Pages%20-%20Demo/gallery-single.htm"><img
-                                    src="img/gallery/horse_2.png" alt="slider"/></a></li>
-                    <li><a href="../../Template%20Pages%20-%20Demo/gallery-single.htm"><img
-                                    src="img/gallery/slider-img-1.jpg" alt="slider"/></a></li>
-                    <li><a href="../../Template%20Pages%20-%20Demo/gallery-single.htm"><img
-                                    src="img/gallery/slider-img-1.jpg" alt="slider"/></a></li>
+                    {% for post in carouselPosts %}
+                        <li><a href="/single_post"><img
+                                        src="img/test/{{ post.nameOfPhoto }}" alt="slider"/></a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>

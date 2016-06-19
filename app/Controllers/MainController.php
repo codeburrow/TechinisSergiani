@@ -15,8 +15,9 @@ class MainController extends Controller
     {
         $DB = new DB();
         $latestPosts = $DB->getNewestPosts(6);
+        $carouselPosts = $DB->getCarouselPosts();
 
-        echo $this->twig->render('index.twig', array('latestPosts' => $latestPosts));
+        echo $this->twig->render('index.twig', array('latestPosts' => $latestPosts, 'carouselPosts' => $carouselPosts));
     }
 
     public function contact()
