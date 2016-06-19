@@ -56,12 +56,12 @@ class DB
         return $result;
     }
 
-    public function getThreeNewestPosts()
+    public function getNewestPosts($numberOfPosts = 3)
     {
         $stmt = $this->conn->prepare("SELECT * 
       FROM kourtis.posts 
       ORDER BY kourtis.posts.id DESC
-      LIMIT 3");
+      LIMIT $numberOfPosts");
         $stmt->execute();
 
         // set the resulting array to associative

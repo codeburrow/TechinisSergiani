@@ -14,7 +14,7 @@ class MainController extends Controller
     public function index()
     {
         $DB = new DB();
-        $latestPosts = $DB->getThreeNewestPosts();
+        $latestPosts = $DB->getNewestPosts(6);
 
         echo $this->twig->render('index.twig', array('latestPosts' => $latestPosts));
     }
