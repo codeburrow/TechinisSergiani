@@ -13,7 +13,10 @@ class MainController extends Controller
 
     public function index()
     {
-        echo $this->twig->render('index.twig', array('name' => 'Antony'));
+        $DB = new DB();
+        $latestPosts = $DB->getThreeNewestPosts();
+
+        echo $this->twig->render('index.twig', array('latestPosts' => $latestPosts));
     }
 
     public function contact()

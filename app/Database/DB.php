@@ -56,4 +56,19 @@ class DB
         return $result;
     }
 
+    public function getThreeNewestPosts()
+    {
+        $stmt = $this->conn->prepare("SELECT * 
+      FROM kourtis.posts 
+      ORDER BY kourtis.posts.id DESC
+      LIMIT 3");
+        $stmt->execute();
+
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll();
+
+        return $result;
+    }
+
 }
