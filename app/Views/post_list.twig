@@ -28,10 +28,10 @@
                     {% for post in posts %}
                         <li class="span6 blog-post-item">
                             <div class="blog-post-hover hidden-phone hidden-tablet">
-                                <p><a href="/single_post" class="clearfix">{{ post.title }}</a>
+                                <p><a href="/music/{{ post.title }}" class="clearfix">{{ post.title }}</a>
                                     {{ post.summary }}</p>
                             </div>
-                            <a href="/single_post"><img src="img/test/{{ post.nameOfPhoto }}" alt="Post Thumb"></a>
+                            <a href="/music/{{ post.title }}"><img src="img/test/{{ post.nameOfPhoto }}" alt="Post Thumb"></a>
                         </li>
                     {% endfor %}
 

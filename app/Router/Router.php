@@ -44,7 +44,7 @@ class Router
     {
         $found = 0;
         $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); //get the url
-
+        
         /**
          * If last char in URL is '/' redirect without it
          * and also check if url is root '/' because this would result

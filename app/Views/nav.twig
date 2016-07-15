@@ -25,8 +25,8 @@
                     </ul>
                 </li>
                 <li><a href="/cinema">ΣΙΝΕΜΑ</a></li>
-                <li><a href="/post_list">ΜΟΥΣΙΚΗ </a></li>
-                <li><a href="/post_list">ΦΩΤΟΓΡΑΦΙΑ</a></li>
+                <li><a href="/music">ΜΟΥΣΙΚΗ </a></li>
+                <li><a href="/photos">ΦΩΤΟΓΡΑΦΙΑ</a></li>
                 <li><a href="/podcasts">ΕΚΠΟΜΠΕΣ</a></li>
                 <li><a href="/contact">ΕΠΙΚΟΙΝΩΝΙΑ</a></li>
             </ul>
@@ -35,25 +35,25 @@
 
         <!-- Mobile Nav
         ================================================== -->
-        <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
-            <option value="">Πλοήγηση...</option>
-            <option value="">ΘΕΑΤΡΟ</option>
-            <option value="">- Συνεντεύξεις</option>
-            <option value="">- Κριτικές</option>
-            <option value="">- Οδηγός</option>
-            <option value="">- Διαγωνισμοί</option>
-            <option value="">- Νέα</option>
-            <option value="/post_list">ΣΙΝΕΜΑ</option>
-            <option value="/post_list">ΜΟΥΣΙΚΗ</option>
-            <option value="/post_list">ΦΩΤΟΓΡΑΦΙΑ</option>
-            <option value="/post_list">ΕΚΠΟΜΠΕΣ</option>
-            <option value="/contact">ΕΠΙΚΟΙΝΩΝΙΑ</option>
-        </select>
-    </div>
-    </form>
+        <form action="#" id="mobile-nav" class="visible-phone">
+            <div class="mobile-nav-select">
+                <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+                    <option value="">Πλοήγηση...</option>
+                    <option value="">ΘΕΑΤΡΟ</option>
+                    <option value="">- Συνεντεύξεις</option>
+                    <option value="">- Κριτικές</option>
+                    <option value="">- Οδηγός</option>
+                    <option value="">- Διαγωνισμοί</option>
+                    <option value="">- Νέα</option>
+                    <option value="/post_list">ΣΙΝΕΜΑ</option>
+                    <option value="/post_list">ΜΟΥΣΙΚΗ</option>
+                    <option value="/post_list">ΦΩΤΟΓΡΑΦΙΑ</option>
+                    <option value="/post_list">ΕΚΠΟΜΠΕΣ</option>
+                    <option value="/contact">ΕΠΙΚΟΙΝΩΝΙΑ</option>
+                </select>
+            </div>
+        </form>
 
-</div>
+    </div>
 
 </div><!-- End Header -->
-<form action="#" id="mobile-nav" class="visible-phone">
-    <div class="mobile-nav-select">
