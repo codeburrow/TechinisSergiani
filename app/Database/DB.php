@@ -45,6 +45,19 @@ class DB
         }
     }
 
+    public function getPost($urlName)
+    {
+        $stmt = $this->conn->prepare("SELECT * FROM kourtis.posts WHERE title LIKE :title");
+        $stmt->bindParam(':title', $urlName);
+        $stmt->execute();
+
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll();
+
+        return $result;
+    }
+
     public function getAllPosts()
     {
         $stmt = $this->conn->prepare("SELECT * FROM kourtis.posts");

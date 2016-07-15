@@ -25,9 +25,9 @@ class MainController extends Controller
         echo $this->twig->render('contact.twig');
     }
 
-    public function postContactDetails()
+    public function error404()
     {
-        var_dump($_POST);
+        echo '404';
     }
     
 }

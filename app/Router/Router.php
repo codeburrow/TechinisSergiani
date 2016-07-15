@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: antony
- * Date: 5/30/16
- * Time: 3:31 PM
- */
 namespace Kourtis\Router;
 
 class Router
@@ -48,44 +42,94 @@ class Router
 
     public function submit()
     {
+        $found = 0;
+        $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); //get the url
+
+        /**
+         * If last char in URL is '/' redirect without it
+         * and also check if url is root '/' because this would result
+         * in infinite loop
+         */
+        if ( ($path[strlen($path)-1] === '/') && !($path === '/') ) { //
+            $newPath = substr($path, 0, -1);
+            header("Location: $newPath", true, 302);
+            exit;
+        }
 
         if ($_SERVER['REQUEST_METHOD'] === 'GET') {
 
-            $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); //get the url
-
+            //Map URL to page
             foreach ($this->_getUri as $key => $value)
             {
-                if (preg_match("#^$value$#", $path))
+                if ( $found = preg_match("#^$value$#", $path) )
                 {
-                    //echo $key . ' => ' . $value; //See what the $path returns
+//                    echo $key . ' => ' . $value; //See what the $path returns
+
+                    //Find parameter if passed
+                    $parts = explode('/', $path);
+                    count($parts) > 2 ? $parameter=$parts[2] : $parameter=null;
 
                     //Instantiate Controller
                     $controller = 'Kourtis\Controllers\\' . $this->_getController[$key];
-                    $controller = new $controller();
+                    $controller = new $controller($parameter);
 
                     //Call the appropriate method
                     $method = $this->_getMethod[$key];
                     $controller->$method();
+
+                    break;
                 }
             }
+
+            //Show 404 page
+            if ( $found == 0 )
+            {
+                //Instantiate Controller
+                $controller = 'Kourtis\Controllers\MainController';
+                $controller = new $controller();
+
+                //Call the appropriate method
+                $method = 'error404';
+                $controller->$method();
+
+                die();
+            }
+
         } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-            $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); //get the url
-
             foreach ($this->_postUri as $key => $value)
             {
-                if (preg_match("#^$value$#", $path))
+                if ( $found = preg_match("#^$value$#", $path))
                 {
-                    //echo $key . ' => ' . $value; //See what the $path returns
+//                    echo $key . ' => ' . $value; //See what the $path returns
+
+                    //Find parameter if passed
+                    $parts = explode('/', $path);
+                    count($parts) > 2 ? $parameter=$parts[2] : $parameter=null;
 
                     //Instantiate Controller
                     $controller = 'Kourtis\Controllers\\' . $this->_postController[$key];
-                    $controller = new $controller();
+                    $controller = new $controller($parameter);
 
                     //Call the appropriate method
                     $method = $this->_postMethod[$key];
                     $controller->$method();
+
+                    break;
                 }
+            }
+
+            //Show 404 page
+            if ( $found == 0 )
+            {
+                //Instantiate Controller
+                $controller = 'Kourtis\Controllers\MainController';
+                $controller = new $controller();
+
+                //Call the appropriate method
+                $method = 'error404';
+                $controller->$method();
+
+                die();
             }
         }
 
