@@ -7,9 +7,9 @@ class MusicController extends Controller
 {
     protected $staticBlogRepo;
     
-    public function __construct($post=null)
+    public function __construct($data=null)
     {
-        parent::__construct($post);
+        parent::__construct($data);
     }
 
     public function showAllPosts()

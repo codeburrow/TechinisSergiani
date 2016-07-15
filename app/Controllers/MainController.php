@@ -6,9 +6,9 @@ use Kourtis\Database\DB;
 class MainController extends Controller
 {
 
-    public function __construct()
+    public function __construct($data=null)
     {
-        parent::__construct();
+        parent::__construct($data);
     }
 
     public function index()
