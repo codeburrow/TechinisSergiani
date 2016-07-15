@@ -17,7 +17,7 @@ $router->get('/photos', 'PhotosController', 'showAllPosts');
 $router->get('/photos/[\w\d]+', 'PhotosController', 'single_post');
 $router->get('/podcasts', 'PodcastsController', 'showAllPosts');
 $router->get('/podcasts/[\w\d]+', 'PodcastsController', 'single_post');
-//$router->get('/single_post', 'PostsController', 'single_post');
+$router->get('/single_post', 'PodcastsController', 'single_post');
 
 $router->post('/contact', 'MainController', 'postContactDetails');
 

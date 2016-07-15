@@ -67,7 +67,6 @@ class Router
 
                     //Find parameter if passed
                     $parts = explode('/', $path);
-//                    count($parts) > 2 ? $parameter=$parts[2] : $parameter=null;
 
                     //Instantiate Controller
                     $controller = 'Kourtis\Controllers\\' . $this->_getController[$key];
@@ -104,11 +103,10 @@ class Router
 
                     //Find parameter if passed
                     $parts = explode('/', $path);
-                    count($parts) > 2 ? $parameter=$parts[2] : $parameter=null;
 
                     //Instantiate Controller
                     $controller = 'Kourtis\Controllers\\' . $this->_postController[$key];
-                    $controller = new $controller($parameter);
+                    $controller = new $controller($parts);
 
                     //Call the appropriate method
                     $method = $this->_postMethod[$key];
