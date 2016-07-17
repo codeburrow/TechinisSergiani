@@ -63,10 +63,12 @@ class Router
             {
                 if ( $found = preg_match("#^$value$#", $path) )
                 {
-//                    echo $key . ' => ' . $value; //See what the $path returns
-
+                    echo $key . ' => ' . $value; //See what the $path returns
+                    var_dump($path);
+                    
                     //Find parameter if passed
                     $parts = explode('/', $path);
+                    var_dump($parts);
 
                     //Instantiate Controller
                     $controller = 'Kourtis\Controllers\\' . $this->_getController[$key];

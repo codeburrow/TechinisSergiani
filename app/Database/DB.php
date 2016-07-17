@@ -47,13 +47,26 @@ class DB
 
     public function getPost($urlName)
     {
-        $stmt = $this->conn->prepare("SELECT * FROM kourtis.posts WHERE title LIKE :title");
-        $stmt->bindParam(':title', $urlName);
+        $stmt = $this->conn->prepare("SELECT * FROM kourtis.posts WHERE urlName LIKE :urlName");
+        $stmt->bindParam(':urlName', $urlName);
         $stmt->execute();
 
         // set the resulting array to associative
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $result = $stmt->fetchAll();
+
+        return $result;
+    }
+
+    public function getPostFromID($id)
+    {
+        $stmt = $this->conn->prepare("SELECT * FROM kourtis.posts WHERE id = :id");
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch();
 
         return $result;
     }

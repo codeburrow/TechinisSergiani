@@ -27,6 +27,8 @@ class CinemaController extends Controller
     {
         $DB = new DB();
 
+        var_dump($this->post);
+
         $post = $DB->getPost($this->post);
 
         if ( !empty($post) ){
@@ -36,6 +38,27 @@ class CinemaController extends Controller
         } else { //if no items found
             echo '404';
         }
+    }
+
+    public function test()
+    {
+        /** Create urlName for New Posts */
+
+        $myDB = new DB();
+
+        var_dump($this->data);
+
+        $post = $myDB->getPostFromID($this->data[2]);
+
+        var_dump($post);
+
+        $explodeResult = explode(' ', $post['title']);
+
+        var_dump($explodeResult);
+
+        $implodeResult = implode('-', $explodeResult);
+
+        var_dump($implodeResult);
     }
 
 }
