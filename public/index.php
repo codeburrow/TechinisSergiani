@@ -7,6 +7,7 @@ use Kourtis\Router;
 
 $router = new Router\Router();
 
+//Public
 $router->get('/', 'MainController', 'index');
 $router->get('/contact', 'MainController', 'contact');
 $router->get('/cinema', 'CinemaController', 'showAllPosts');
@@ -18,11 +19,27 @@ $router->get('/photos/[-\w\d\!\.]+', 'PhotosController', 'single_post');
 $router->get('/podcasts', 'PodcastsController', 'showAllPosts');
 $router->get('/podcasts/[-\w\d\!\.]+', 'PodcastsController', 'single_post');
 $router->get('/single_post', 'PodcastsController', 'single_post');
+//Admin
+$router->get('/admin/dashboard', 'AdminController', 'index');
+$router->get('/admin/dashboard/addItem', 'AdminController', 'addItem');
+$router->get('/admin/dashboard/deleteItem', 'AdminController', 'deleteItem');
+$router->get('/admin/dashboard/editItem', 'AdminController', 'editItem');
+$router->get('/admin/dashboard/contactSupport', 'AdminController', 'contactSupport');
+$router->get('/admin/login', 'AdminController', 'login');
+$router->get('/admin/logout', 'AdminController', 'logout');
 
-$router->get('/test/[-\w\d\!\.]+', 'CinemaController', 'test');
-$router->get('/test', 'MainController', 'test');
+//$router->get('/test/[-\w\d\!\.]+', 'CinemaController', 'test');
+//$router->get('/test', 'MainController', 'test');
 
+//Public
 $router->post('/contact', 'MainController', 'postContactDetails');
+//Admin
+$router->post('/admin/addItem', 'AdminController', 'postAddItem');
+$router->post('/admin/deleteItem', 'AdminController', 'postDeleteItem');
+$router->post('/admin/editItem', 'AdminController', 'postEditItem');
+$router->post('/admin/login', 'AdminController', 'postLogin');
+$router->post('/admin/contact', 'AdminController', 'postContact');
+
 
 ////See inside $router
 //echo "<pre>";
