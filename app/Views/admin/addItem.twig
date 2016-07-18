@@ -12,7 +12,7 @@
                     <div class="row x_title">
                         <div class="col-md-6">
                             <h3>Add New Item
-                                <small>to the portfolio page</small>
+                                <small>to the {% block sector %}{% endblock sector %} page</small>
                             </h3>
                         </div>
                     </div>
@@ -38,47 +38,18 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="subtitle">Subtitle
+                                    <label class="control-label col-md-3 col-sm-3 col-xs-12" for="summary">Summary
                                     </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input type="text" id="subtitle" name="subtitle"
-                                               class="form-control col-md-7 col-xs-12">
+                                        <textarea id="summary" class="form-control col-md-7 col-xs-12"
+                                                  name="summary"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="urlName" class="control-label col-md-3 col-sm-3 col-xs-12">URL name <span
-                                                class="required">*</span> </label>
+                                    <label for="body" class="control-label col-md-3 col-sm-3 col-xs-12">Body </label>
                                     <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <input id="urlName" class="form-control col-md-7 col-xs-12" type="text" name="urlName"
-                                               required="required">
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label for="description" class="control-label col-md-3 col-sm-3 col-xs-12">Description </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <textarea id="description" class="form-control col-md-7 col-xs-12" type="text"
-                                                  name="description"></textarea>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Tags
-                                    </label>
-                                    <div class="col-md-6 col-sm-6 col-xs-12">
-                                        <div id="tags" class="btn-group" data-toggle="buttons">
-                                            <label class="btn btn-default" data-toggle-class="btn-danger" data-toggle-passive-class="btn-dager">
-                                                <input type="checkbox" name="tags[]" value="branding"> &nbsp; Branding
-                                                &nbsp;
-                                            </label>
-                                            <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                                <input type="checkbox" name="tags[]" value="web"> &nbsp; Web &nbsp;
-                                            </label>
-                                            <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                                <input type="checkbox" name="tags[]" value="print"> &nbsp; Print &nbsp;
-                                            </label>
-                                            <label class="btn btn-default" data-toggle-class="btn-primary" data-toggle-passive-class="btn-default">
-                                                <input type="checkbox" name="tags[]" value="photo"> &nbsp; Photo &nbsp;
-                                            </label>
-                                        </div>
+                                        <textarea id="description" class="form-control col-md-7 col-xs-12" rows="10"
+                                                  name="body"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">

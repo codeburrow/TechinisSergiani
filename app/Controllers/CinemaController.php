@@ -1,12 +1,10 @@
 <?php
 namespace Kourtis\Controllers;
 
-use Kourtis\Database\DB;
+use Kourtis\Database\CinemaDB;
 
 class CinemaController extends Controller
 {
-    protected $staticBlogRepo;
-    
     public function __construct($data=null)
     {
         parent::__construct($data);
@@ -14,9 +12,9 @@ class CinemaController extends Controller
 
     public function showAllPosts()
     {
-        $myDB = new DB();
+        $cinemaDB = new CinemaDB();
 
-        $posts = $myDB->getAllPosts();
+        $posts = $cinemaDB->getAllPosts();
 
         $sector = $this->data[1];
         
@@ -25,11 +23,9 @@ class CinemaController extends Controller
 
     public function single_post()
     {
-        $DB = new DB();
-
-        var_dump($this->post);
-
-        $post = $DB->getPost($this->post);
+        $cinemaDB = new CinemaDB();
+        
+        $post = $cinemaDB->getPost($this->post);
 
         if ( !empty($post) ){
             $post = $post[0];
@@ -44,7 +40,7 @@ class CinemaController extends Controller
     {
         /** Create urlName for New Posts */
 
-        $myDB = new DB();
+        $myDB = new CinemaDB();
 
         var_dump($this->data);
 

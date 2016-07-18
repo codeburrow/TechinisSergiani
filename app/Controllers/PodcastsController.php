@@ -1,12 +1,10 @@
 <?php
 namespace Kourtis\Controllers;
 
-use Kourtis\Database\DB;
+use Kourtis\Database\PodcastsDB;
 
 class PodcastsController extends Controller
 {
-    protected $staticBlogRepo;
-    
     public function __construct($data=null)
     {
         parent::__construct($data);
@@ -14,9 +12,9 @@ class PodcastsController extends Controller
 
     public function showAllPosts()
     {
-        $myDB = new DB();
+        $podcastsDB = new PodcastsDB();
 
-        $posts = $myDB->getAllPosts();
+        $posts = $podcastsDB->getAllPosts();
 
         $sector = $this->data[1];
 
@@ -25,9 +23,9 @@ class PodcastsController extends Controller
 
     public function single_post()
     {
-        $DB = new DB();
+        $podcastsDB = new PodcastsDB();
 
-        $post = $DB->getPost($this->post);
+        $post = $podcastsDB->getPost($this->post);
 
         if ( !empty($post) ){
             $post = $post[0];

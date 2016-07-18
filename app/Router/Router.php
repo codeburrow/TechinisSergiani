@@ -80,19 +80,7 @@ class Router
                 }
             }
 
-            //Show 404 page
-            if ( $found == 0 )
-            {
-                //Instantiate Controller
-                $controller = 'Kourtis\Controllers\MainController';
-                $controller = new $controller();
-
-                //Call the appropriate method
-                $method = 'error404';
-                $controller->$method();
-
-                die();
-            }
+            $this->showError404($found);
 
         } elseif ($_SERVER['REQUEST_METHOD'] === 'POST') {
             foreach ($this->_postUri as $key => $value)
@@ -114,23 +102,27 @@ class Router
 
                     break;
                 }
-            }
+            } //endblock foreach
 
-            //Show 404 page
-            if ( $found == 0 )
-            {
-                //Instantiate Controller
-                $controller = 'Kourtis\Controllers\MainController';
-                $controller = new $controller();
+            $this->showError404($found);
 
-                //Call the appropriate method
-                $method = 'error404';
-                $controller->$method();
+        } //endblock elseif
+    } //endblock method submit
 
-                die();
-            }
+    public function showError404($found)
+    {
+        //Show 404 page
+        if ( $found == 0 )
+        {
+            //Instantiate Controller
+            $controller = 'Kourtis\Controllers\MainController';
+            $controller = new $controller();
+
+            //Call the appropriate method
+            $method = 'error404';
+            $controller->$method();
+
+            die();
         }
-
     }
-
 }

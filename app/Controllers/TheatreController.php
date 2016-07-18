@@ -1,9 +1,9 @@
 <?php
 namespace Kourtis\Controllers;
 
-use Kourtis\Database\PhotosDB;
+use Kourtis\Database\TheatreDB;
 
-class PhotosController extends Controller
+class TheatreController extends Controller
 {
     public function __construct($data=null)
     {
@@ -12,9 +12,9 @@ class PhotosController extends Controller
 
     public function showAllPosts()
     {
-        $photosDB = new PhotosDB();
+        $theatreDB = new TheatreDB();
 
-        $posts = $photosDB->getAllPosts();
+        $posts = $theatreDB->getAllPosts();
 
         $sector = $this->data[1];
 
@@ -23,9 +23,9 @@ class PhotosController extends Controller
 
     public function single_post()
     {
-        $photosDB = new PhotosDB();
+        $theatreDB = new TheatreDB();
 
-        $post = $photosDB->getPost($this->post);
+        $post = $theatreDB->getPost($this->post);
 
         if ( !empty($post) ){
             $post = $post[0];

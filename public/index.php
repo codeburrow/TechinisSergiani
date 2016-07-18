@@ -10,6 +10,8 @@ $router = new Router\Router();
 //Public
 $router->get('/', 'MainController', 'index');
 $router->get('/contact', 'MainController', 'contact');
+$router->get('/theatre', 'TheatreController', 'showAllPosts');
+$router->get('/theatre/[-\w\d\?\!\.]+', 'TheatreController', 'single_post');
 $router->get('/cinema', 'CinemaController', 'showAllPosts');
 $router->get('/cinema/[-\w\d\?\!\.]+', 'CinemaController', 'single_post');
 $router->get('/music', 'MusicController', 'showAllPosts');
@@ -18,10 +20,13 @@ $router->get('/photos', 'PhotosController', 'showAllPosts');
 $router->get('/photos/[-\w\d\!\.]+', 'PhotosController', 'single_post');
 $router->get('/podcasts', 'PodcastsController', 'showAllPosts');
 $router->get('/podcasts/[-\w\d\!\.]+', 'PodcastsController', 'single_post');
-$router->get('/single_post', 'PodcastsController', 'single_post');
 //Admin
 $router->get('/admin/dashboard', 'AdminController', 'index');
-$router->get('/admin/dashboard/addItem', 'AdminController', 'addItem');
+$router->get('/admin/dashboard/addTheatrePost', 'AdminController', 'addTheatrePost');
+$router->get('/admin/dashboard/addCinemaPost', 'AdminController', 'addCinemaPost');
+$router->get('/admin/dashboard/addMusicPost', 'AdminController', 'addMusicPost');
+$router->get('/admin/dashboard/addPhotoPost', 'AdminController', 'addPhotoPost');
+$router->get('/admin/dashboard/addPodcastPost', 'AdminController', 'addPodcastPost');
 $router->get('/admin/dashboard/deleteItem', 'AdminController', 'deleteItem');
 $router->get('/admin/dashboard/editItem', 'AdminController', 'editItem');
 $router->get('/admin/dashboard/contactSupport', 'AdminController', 'contactSupport');

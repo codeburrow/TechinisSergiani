@@ -1,12 +1,10 @@
 <?php
 namespace Kourtis\Controllers;
 
-use Kourtis\Database\DB;
+use Kourtis\Database\MusicDB;
 
 class MusicController extends Controller
 {
-    protected $staticBlogRepo;
-    
     public function __construct($data=null)
     {
         parent::__construct($data);
@@ -14,9 +12,9 @@ class MusicController extends Controller
 
     public function showAllPosts()
     {
-        $myDB = new DB();
+        $musicDB = new MusicDB();
 
-        $posts = $myDB->getAllPosts();
+        $posts = $musicDB->getAllPosts();
 
         $sector = $this->data[1];
 
@@ -25,9 +23,9 @@ class MusicController extends Controller
 
     public function single_post()
     {
-        $DB = new DB();
+        $musicDB = new MusicDB();
 
-        $post = $DB->getPost($this->post);
+        $post = $musicDB->getPost($this->post);
 
         if ( !empty($post) ){
             $post = $post[0];
