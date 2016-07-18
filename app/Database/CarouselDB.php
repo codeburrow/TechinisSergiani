@@ -4,7 +4,7 @@ namespace Kourtis\Database;
 use PDO;
 use PDOException;
 
-class CinemaDB extends DB implements PostDbInterface
+class CarouselDB extends DB implements PostDbInterface
 {
     public function getPost($urlName)
     {
@@ -35,6 +35,21 @@ class CinemaDB extends DB implements PostDbInterface
     public function getAllPosts()
     {
         $stmt = $this->conn->prepare("SELECT * FROM kourtis.cinemaPosts");
+        $stmt->execute();
+
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll();
+
+        return $result;
+    }
+
+    public function getNewestPosts($numberOfPosts = 3)
+    {
+        $stmt = $this->conn->prepare("SELECT * 
+      FROM kourtis.posts 
+      ORDER BY kourtis.posts.id DESC
+      LIMIT $numberOfPosts");
         $stmt->execute();
 
         // set the resulting array to associative

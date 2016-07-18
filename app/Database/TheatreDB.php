@@ -4,7 +4,7 @@ namespace Kourtis\Database;
 use PDO;
 use PDOException;
 
-class TheatreDB extends DB
+class TheatreDB extends DB implements PostDbInterface
 {
     public function getPost($urlName)
     {
@@ -43,4 +43,10 @@ class TheatreDB extends DB
 
         return $result;
     }
+
+    public function addItem($data, $imageName)
+    {
+        //ToDO
+    }
+    
 }

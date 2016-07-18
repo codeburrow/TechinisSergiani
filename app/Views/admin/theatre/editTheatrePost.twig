@@ -1,0 +1,84 @@
+{% extends "master.twig" %}
+
+{% block content %}
+
+    <div class="right_col" role="main">
+        <div class="">
+            <div class="page-title">
+                <div class="title_left">
+                    <h3>Edit Item
+                        <small> in theatre page</small>
+                    </h3>
+                </div>
+            </div>
+
+            <div class="clearfix"></div>
+
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="x_panel">
+                        <div class="x_title">
+                            <h2>Click on the fields to edit</h2>
+                            <ul class="nav navbar-right panel_toolbox">
+                                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                                </li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="x_content">
+
+                            {% if result.success == 1 %}
+                                <h3 style="color: forestgreen">{{ result.message }}</h3>
+                            {% else %}
+                                <h3 style="color: tomato">{{ result.message }}</h3>
+                            {% endif %}
+
+                            <form action="/admin/editItem" method="post">
+                                <table id="datatable"
+                                       class="table table-striped table-bordered responsive-utilities jambo_table">
+                                    <thead>
+                                    <tr>
+                                        <th>ID</th>
+                                        <th>URL Name</th>
+                                        <th>Title</th>
+                                        <th>Summary</th>
+                                        <th>Body</th>
+                                        <th>nameOfPhoto</th>
+                                        <th>inCarousel</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    {% for post in posts %}
+                                        <tr>
+                                            <td><input type="checkbox" name="items[]" value="{{ post.id }}"/></td>
+                                            <td><input style="border: 1px solid lightblue;" type="text" name="urlName[{{ post.id }}]" value="{{ post.urlName }}"></td>
+                                            <td><input style="border: 1px solid lightblue;" type="text" name="title[{{ post.id }}]" value="{{ post.title }}"></td>
+                                            <td><input style="border: 1px solid lightblue;" type="text" name="summary[{{ post.id }}]" value="{{ post.summary }}"></td>
+                                            <td><input style="border: 1px solid lightblue;" type="text" name="body[{{ post.id }}]" value="{{ post.body }}"></td>
+                                            <td><input style="border: 1px solid lightblue;" type="text" name="inCarousel[{{ post.id }}]" value="{{ post.inCarousel }}"></td>
+                                            <td><img style="max-height: 150px; max-width: 150px;"
+                                                     src="/img/{{ post.nameOfPhoto }}" alt="image"></td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+
+                                <div class="form-group-lg" style="margin: 10px auto;">
+                                    <button style="margin: 30px auto;" type="submit"
+                                            class="btn btn-warning btn-block pull-left">
+                                        Edit Selected Items
+                                    </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

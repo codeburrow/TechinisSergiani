@@ -4,7 +4,7 @@ namespace Kourtis\Database;
 use PDO;
 use PDOException;
 
-class PodcastsDB extends DB
+class PodcastsDB extends DB implements PostDbInterface
 {
     public function getPost($urlName)
     {

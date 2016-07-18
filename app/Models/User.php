@@ -7,19 +7,24 @@
  */
 namespace Kourtis\Models;
 
-use Kourtis\Database\DB;
+use Kourtis\Database\UserDB;
 
 class User
 {
-    protected $myDB;
+    protected $userDB;
 
     protected $username;
     protected $password;
     protected $isAdmin;
 
+    /**
+     * User constructor.
+     * @param $username
+     * @param $password
+     */
     public function __construct($username, $password)
     {
-        $this->myDB = new DB();
+        $this->userDB = new UserDB();
 
         $this->setClassVariables($username, $password);
     }
@@ -50,7 +55,7 @@ class User
 
     public function setClassVariables($username, $password)
     {
-        $user = $this->myDB->getUser($username, $password);
+        $user = $this->userDB->getUser($username, $password);
 
         $user = $user[0];
 

@@ -36,25 +36,4 @@ class CinemaController extends Controller
         }
     }
 
-    public function test()
-    {
-        /** Create urlName for New Posts */
-
-        $myDB = new CinemaDB();
-
-        var_dump($this->data);
-
-        $post = $myDB->getPostFromID($this->data[2]);
-
-        var_dump($post);
-
-        $explodeResult = explode(' ', $post['title']);
-
-        var_dump($explodeResult);
-
-        $implodeResult = implode('-', $explodeResult);
-
-        var_dump($implodeResult);
-    }
-
 }

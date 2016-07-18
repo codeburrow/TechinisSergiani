@@ -7,7 +7,7 @@
             <div class="page-title">
                 <div class="title_left">
                     <h3>Delete Item
-                        <small> from portfolio page</small>
+                        <small> from photos page</small>
                     </h3>
                 </div>
             </div>
@@ -41,24 +41,24 @@
                                         <th>ID</th>
                                         <th>URL Name</th>
                                         <th>Title</th>
-                                        <th>Subtitle</th>
-                                        <th>Tags</th>
-                                        <th>Description</th>
-                                        <th>Image</th>
+                                        <th>Summary</th>
+                                        <th>Body</th>
+                                        <th>nameOfPhoto</th>
+                                        <th>inCarousel</th>
                                     </tr>
                                     </thead>
 
                                     <tbody>
-                                    {% for item in items %}
+                                    {% for post in posts %}
                                         <tr>
-                                            <td><input type="checkbox" name="items[]" value="{{ item.id }}"/></td>
-                                            <td>{{ item.urlName }}</td>
-                                            <td>{{ item.title }}</td>
-                                            <td>{{ item.subtitle }}</td>
-                                            <td>{{ item.tags }}</td>
-                                            <td>{{ item.description }}</td>
+                                            <td><input type="checkbox" name="items[]" value="{{ post.id }}"/></td>
+                                            <td><input style="border: 1px solid lightblue;" type="text" name="urlName[{{ post.id }}]" value="{{ post.urlName }}"></td>
+                                            <td><input style="border: 1px solid lightblue;" type="text" name="title[{{ post.id }}]" value="{{ post.title }}"></td>
+                                            <td><input style="border: 1px solid lightblue;" type="text" name="summary[{{ post.id }}]" value="{{ post.summary }}"></td>
+                                            <td><input style="border: 1px solid lightblue;" type="text" name="body[{{ post.id }}]" value="{{ post.body }}"></td>
+                                            <td><input style="border: 1px solid lightblue;" type="text" name="inCarousel[{{ post.id }}]" value="{{ post.inCarousel }}"></td>
                                             <td><img style="max-height: 150px; max-width: 150px;"
-                                                     src="/images/{{ item.image }}" alt="image"></td>
+                                                     src="/img/{{ post.nameOfPhoto }}" alt="image"></td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>

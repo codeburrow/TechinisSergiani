@@ -4,7 +4,7 @@ namespace Kourtis\Database;
 use PDO;
 use PDOException;
 
-class PhotosDB extends DB
+class PhotosDB extends DB implements PostDbInterface
 {
     public function getPost($urlName)
     {

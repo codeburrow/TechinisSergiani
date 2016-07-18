@@ -4,7 +4,7 @@ namespace Kourtis\Database;
 use PDO;
 use PDOException;
 
-class MusicDB extends DB
+class MusicDB extends DB implements PostDbInterface
 {
     public function getPost($urlName)
     {
