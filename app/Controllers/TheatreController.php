@@ -25,7 +25,7 @@ class TheatreController extends Controller
     {
         $theatreDB = new TheatreDB();
 
-        $post = $theatreDB->getPost($this->post);
+        $post = $theatreDB->getPostFromUrlName($this->post);
 
         if ( !empty($post) ){
             $post = $post[0];

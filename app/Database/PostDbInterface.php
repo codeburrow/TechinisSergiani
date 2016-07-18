@@ -3,7 +3,7 @@ namespace Kourtis\Database;
 
 interface PostDbInterface
 {
-    public function getPost($urlName);
+    public function getPostFromUrlName($urlName);
 
     public function getAllPosts();
 

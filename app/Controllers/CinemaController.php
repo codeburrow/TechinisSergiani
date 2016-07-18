@@ -25,7 +25,7 @@ class CinemaController extends Controller
     {
         $cinemaDB = new CinemaDB();
         
-        $post = $cinemaDB->getPost($this->post);
+        $post = $cinemaDB->getPostFromUrlName($this->post);
 
         if ( !empty($post) ){
             $post = $post[0];

@@ -25,7 +25,7 @@ class MusicController extends Controller
     {
         $musicDB = new MusicDB();
 
-        $post = $musicDB->getPost($this->post);
+        $post = $musicDB->getPostFromUrlName($this->post);
 
         if ( !empty($post) ){
             $post = $post[0];

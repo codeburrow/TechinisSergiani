@@ -25,7 +25,7 @@ class PhotosController extends Controller
     {
         $photosDB = new PhotosDB();
 
-        $post = $photosDB->getPost($this->post);
+        $post = $photosDB->getPostFromUrlName($this->post);
 
         if ( !empty($post) ){
             $post = $post[0];

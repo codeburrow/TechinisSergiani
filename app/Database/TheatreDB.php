@@ -6,7 +6,7 @@ use PDOException;
 
 class TheatreDB extends DB implements PostDbInterface
 {
-    public function getPost($urlName)
+    public function getPostFromUrlName($urlName)
     {
         $stmt = $this->conn->prepare("SELECT * FROM kourtis.theatrePosts WHERE urlName LIKE :urlName");
         $stmt->bindParam(':urlName', $urlName);

@@ -25,7 +25,7 @@ class PodcastsController extends Controller
     {
         $podcastsDB = new PodcastsDB();
 
-        $post = $podcastsDB->getPost($this->post);
+        $post = $podcastsDB->getPostFromUrlName($this->post);
 
         if ( !empty($post) ){
             $post = $post[0];
