@@ -54,7 +54,7 @@ $router->post('/admin/dashboard/addTheatrePost', 'Admin\TheatreAdminController',
 $router->post('/admin/dashboard/addCinemaPost', 'Admin\CinemaAdminController', 'postAddPost');
 $router->post('/admin/dashboard/addMusicPost', 'Admin\MusicAdminController', 'postAddPost');
 $router->post('/admin/dashboard/addPhotosPost', 'Admin\PhotosAdminController', 'postAddPost');
-$router->post('/admin/dashboard/addPodcastsPost', 'Admin\CPodcastsAdminController', 'postAddPost');
+$router->post('/admin/dashboard/addPodcastsPost', 'Admin\PodcastsAdminController', 'postAddPost');
 $router->post('/admin/deleteItem', 'Admin\AdminController', 'postDeleteItem');
 $router->post('/admin/editItem', 'Admin\AdminController', 'postEditItem');
 $router->post('/admin/login', 'Admin\AdminController', 'postLogin');
