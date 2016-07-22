@@ -44,9 +44,28 @@ class TheatreDB extends DB implements PostDbInterface
         return $result;
     }
 
-    public function addItem($data, $imageName)
+    public function addPost($data, $imageName)
     {
-        //ToDO
+        try {
+            $stmt = $this->conn->prepare("INSERT INTO kourtis.theatrePosts (`title`, `summary`, `urlName`, `body`, `nameOfPhoto`)
+    VALUES (:title, :summary, :urlName, :body, :nameOfPhoto)");
+            $stmt->bindParam(':title', $data['title']);
+            $stmt->bindParam(':summary', $data['summary']);
+            $stmt->bindParam(':urlName', $data['title']);
+            $stmt->bindParam(':body', $data['body']);
+            $stmt->bindParam(':nameOfPhoto', $imageName);
+            $result = $stmt->execute();
+            var_dump($result);
+
+            if ($result == true)
+                $result = "";
+            else
+                $result = "Error inserting into database.";
+
+            return $result;
+        } catch (PDOException $e) {
+            return $e->getMessage();
+        }
     }
     
 }

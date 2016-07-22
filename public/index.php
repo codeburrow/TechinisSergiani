@@ -50,7 +50,7 @@ $router->get('/admin/dashboard/deletePodcastPost', 'Admin\PodcastsAdminControlle
 //Public
 $router->post('/contact', 'MainController', 'postContactDetails');
 //Admin
-$router->post('/admin/addItem', 'Admin\AdminController', 'postAddItem');
+$router->post('/admin/dashboard/addTheatrePost', 'Admin\TheatreAdminController', 'postAddPost');
 $router->post('/admin/deleteItem', 'Admin\AdminController', 'postDeleteItem');
 $router->post('/admin/editItem', 'Admin\AdminController', 'postEditItem');
 $router->post('/admin/login', 'Admin\AdminController', 'postLogin');
