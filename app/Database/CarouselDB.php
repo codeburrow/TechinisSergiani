@@ -129,13 +129,20 @@ class CarouselDB extends DB implements PostDbInterface
             $description = null;
         }
 
+        if (isset($data['url']) && !empty($data['url'])) {
+            $url = $data['url'];
+        } else {
+            $url = null;
+        }
+
         try {
-            $stmt = $this->conn->prepare("INSERT INTO kourtis.carouselPosts (`name`, `included`, `position`,  `description`)
-    VALUES (:name, :included, :position, :description)");
+            $stmt = $this->conn->prepare("INSERT INTO kourtis.carouselPosts (`name`, `included`, `position`,  `description`, `url`)
+    VALUES (:name, :included, :position, :description, :url)");
             $stmt->bindValue(':name', $imageName);
             $stmt->bindValue(':included', $included);
             $stmt->bindValue(':position', null);
             $stmt->bindValue(':description', $description);
+            $stmt->bindValue(':url', $url);
             $result = $stmt->execute();
 
             if ($result == true) {
