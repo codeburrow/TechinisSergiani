@@ -43,4 +43,28 @@ class MusicDB extends DB implements PostDbInterface
 
         return $result;
     }
+
+    public function addPost($data, $imageName)
+    {
+        try {
+            $stmt = $this->conn->prepare("INSERT INTO kourtis.musicPosts (`title`, `summary`, `urlName`, `body`, `nameOfPhoto`)
+    VALUES (:title, :summary, :urlName, :body, :nameOfPhoto)");
+            $stmt->bindParam(':title', $data['title']);
+            $stmt->bindParam(':summary', $data['summary']);
+            $stmt->bindParam(':urlName', $data['title']);
+            $stmt->bindParam(':body', $data['body']);
+            $stmt->bindParam(':nameOfPhoto', $imageName);
+            $result = $stmt->execute();
+
+            if ($result == true)
+                $result = "";
+            else
+                $result = "Error inserting into database.";
+
+            return $result;
+        } catch (PDOException $e) {
+            return $e->getMessage();
+        }
+    }
+    
 }
