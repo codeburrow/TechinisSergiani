@@ -44,21 +44,29 @@ $router->get('/admin/dashboard/deleteCinemaPost', 'Admin\CinemaAdminController',
 $router->get('/admin/dashboard/deleteMusicPost', 'Admin\MusicAdminController', 'deletePost');
 $router->get('/admin/dashboard/deletePhotoPost', 'Admin\PhotosAdminController', 'deletePost');
 $router->get('/admin/dashboard/deletePodcastPost', 'Admin\PodcastsAdminController', 'deletePost');
+//Admin - Carousel
+$router->get('/admin/dashboard/editCarousel', 'Admin\CarouselAdminController', 'editCarousel');
+$router->get('/admin/dashboard/postEditCarousel', 'Admin\CarouselAdminController', 'postEditCarousel');
+$router->get('/admin/dashboard/uploadCarousel', 'Admin\CarouselAdminController', 'uploadCarousel');
+$router->get('/deleteFromCarouselDB', 'Admin\CarouselAdminController', 'deleteFromCarousel');
 
 
 //---------- POST ----------//
 //Public
 $router->post('/contact', 'MainController', 'postContactDetails');
-//Admin
+//Admin - Add Posts
 $router->post('/admin/dashboard/addTheatrePost', 'Admin\TheatreAdminController', 'postAddPost');
 $router->post('/admin/dashboard/addCinemaPost', 'Admin\CinemaAdminController', 'postAddPost');
 $router->post('/admin/dashboard/addMusicPost', 'Admin\MusicAdminController', 'postAddPost');
 $router->post('/admin/dashboard/addPhotosPost', 'Admin\PhotosAdminController', 'postAddPost');
 $router->post('/admin/dashboard/addPodcastsPost', 'Admin\PodcastsAdminController', 'postAddPost');
+
 $router->post('/admin/deleteItem', 'Admin\AdminController', 'postDeleteItem');
 $router->post('/admin/editItem', 'Admin\AdminController', 'postEditItem');
 $router->post('/admin/login', 'Admin\AdminController', 'postLogin');
 $router->post('/admin/contact', 'Admin\AdminController', 'postContact');
+//Admin - Carousel
+$router->post('/admin/dashboard/uploadCarousel', 'Admin\CarouselAdminController', 'postUploadCarousel');
 
 
 ////See inside $router
