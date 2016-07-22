@@ -55,7 +55,6 @@ class TheatreDB extends DB implements PostDbInterface
             $stmt->bindParam(':body', $data['body']);
             $stmt->bindParam(':nameOfPhoto', $imageName);
             $result = $stmt->execute();
-            var_dump($result);
 
             if ($result == true)
                 $result = "";
