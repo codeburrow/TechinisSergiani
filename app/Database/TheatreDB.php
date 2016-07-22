@@ -44,6 +44,21 @@ class TheatreDB extends DB implements PostDbInterface
         return $result;
     }
 
+    public function getNewestPosts($numberOfPosts = 3)
+    {
+        $stmt = $this->conn->prepare("SELECT * 
+      FROM kourtis.theatrePosts 
+      ORDER BY kourtis.theatrePosts.id DESC
+      LIMIT $numberOfPosts");
+        $stmt->execute();
+
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll();
+
+        return $result;
+    }
+
     public function addPost($data, $imageName)
     {
         try {

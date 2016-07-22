@@ -16,13 +16,15 @@ class MusicController extends Controller
 
         $posts = $musicDB->getAllPosts();
 
-        $sector = $this->data[1];
+        $sector = $this->sector;
 
         echo $this->twig->render( 'post_list.twig', array('posts'=>$posts, 'sector'=>$sector) );
     }
 
     public function single_post()
     {
+        $sector = $this->sector;
+
         $musicDB = new MusicDB();
 
         $post = $musicDB->getPostFromUrlName($this->post);
@@ -30,7 +32,7 @@ class MusicController extends Controller
         if ( !empty($post) ){
             $post = $post[0];
 
-            echo $this->twig->render('single_post.twig', array('post' => $post));
+            echo $this->twig->render('single_post.twig', array('post' => $post, 'sector'=>$sector));
         } else { //if no items found
             echo '404';
         }

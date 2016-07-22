@@ -3,6 +3,7 @@ namespace Kourtis\Controllers;
 
 use Kourtis\Database\CarouselDB;
 use Kourtis\Database\DB;
+use Kourtis\Database\TheatreDB;
 
 class MainController extends Controller
 {
@@ -15,10 +16,11 @@ class MainController extends Controller
     public function index()
     {
         $carouselDB = new CarouselDB();
+        $theatreDB = new TheatreDB();
 
         //ToDo: Implement the carousel methods below
-        $latestPosts = $carouselDB->getNewestPosts(6);
-        $carouselPosts = $carouselDB->getAllPosts();
+        $latestPosts = $theatreDB->getNewestPosts(6);
+        $carouselPosts = $carouselDB->getCarouselImages();
 
         echo $this->twig->render('index.twig', array('latestPosts' => $latestPosts, 'carouselPosts' => $carouselPosts));
     }
