@@ -12,7 +12,7 @@
             <div class="flexslider">
                 <ul class="slides">
                     {% for post in carouselPosts %}
-                        <li><a href="/single_post"><img
+                        <li><a href="{{ post.url }}"><img
                                         src="img/carousel/{{ post.name }}" alt="slider"/></a></li>
                     {% endfor %}
                 </ul>
