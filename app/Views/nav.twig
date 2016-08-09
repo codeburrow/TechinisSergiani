@@ -4,8 +4,10 @@
     ================================================== -->
     <div class="span5 logo">
         <a href="/" style="border-radius: 50px;">
-            <img src="/img/logo2.png" style="max-width: 100px;" alt=""/></a>
-        <h3 style="display: inline;"><i>Technis Sergiani</i></h3>
+            <img src="/img/logo.png" style="max-width: 100px; margin-top: -20px;" alt=""/>
+            <img src="/img/logo_letters_greek.png" style="margin-left: -20px;" alt=""/>
+        </a>
+        {#<h3 style="display: inline;"><i>ΤΕΧΝΗΣ ΣΕΡΓΙΑΝΙ</i></h3>#}
     </div>
 
     <!-- Main Navigation
@@ -18,11 +20,11 @@
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">ΘΕΑΤΡΟ <b
                                 class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="/theatre">Συνεντευξεις</a></li>
                         <li><a href="/theatre">Κριτικες</a></li>
-                        <li><a href="/theatre">Οδηγος</a></li>
                         <li><a href="/theatre">Διαγωνισμοι</a></li>
-                        <li><a href="/theatre">Νεα</a></li>
+                        <li><a href="/theatre">Παραστασεις</a></li>
+                        <li><a href="/theatre">Συνεντευξεις</a></li>
+                        {#<li><a href="/theatre">Αποκλειστικά</a></li>#}
                     </ul>
                 </li>
                 <li><a href="/cinema">ΣΙΝΕΜΑ</a></li>
@@ -40,16 +42,16 @@
             <div class="mobile-nav-select">
                 <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
                     <option value="">Πλοήγηση...</option>
-                    <option value="">ΘΕΑΤΡΟ</option>
-                    <option value="">- Συνεντεύξεις</option>
-                    <option value="">- Κριτικές</option>
-                    <option value="">- Οδηγός</option>
-                    <option value="">- Διαγωνισμοί</option>
-                    <option value="">- Νέα</option>
-                    <option value="/post_list">ΣΙΝΕΜΑ</option>
-                    <option value="/post_list">ΜΟΥΣΙΚΗ</option>
-                    <option value="/post_list">ΦΩΤΟΓΡΑΦΙΑ</option>
-                    <option value="/post_list">ΕΚΠΟΜΠΕΣ</option>
+                    <option value="#">ΘΕΑΤΡΟ</option>
+                    <option value="/theatre">- Κριτικές</option>
+                    <option value="/theatre">- Διαγωνισμοί</option>
+                    <option value="/theatre">- Παραστάσεις</option>
+                    <option value="/theatre">- Συνεντεύξεις</option>
+                    {#<option value="">- Αποκλειστικά</option>#}
+                    <option value="/cinema">ΣΙΝΕΜΑ</option>
+                    <option value="/music">ΜΟΥΣΙΚΗ</option>
+                    <option value="/photos">ΦΩΤΟΓΡΑΦΙΑ</option>
+                    <option value="/podcasts">ΕΚΠΟΜΠΕΣ</option>
                     <option value="/contact">ΕΠΙΚΟΙΝΩΝΙΑ</option>
                 </select>
             </div>

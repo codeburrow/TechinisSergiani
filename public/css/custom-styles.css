@@ -3,7 +3,10 @@ html, body {
 	line-height:18px;
 	height: 100%;
  }
-body {background: #f9f9f9 url(../img/page-bg-1.jpg);}
+body {
+	background: #FFF1C7;
+	color: #310000;
+}
 
 .main-container {
 	height:auto; 
@@ -24,7 +27,7 @@ h1, h2, h3, h4 , h5, h6 {
 }	
 h1, h2, h3, h4, h5 {text-shadow: 1px 1px 0 #fdfdfd, 2px 2px 0 rgba(81, 81, 81, 0.5), 0 0 1px #fdfdfd;}
 h1.title-bg, h2.title-bg, h3.title-bg, h4.title-bg , h5.title-bg, h6.title-bg {
-	background:#f8f8f8; 
+	/*background:#f8f8f8; */
 	padding:10px 5px;
 	margin: 0px 0px 20px 0px;
 	border-bottom: 1px dotted #a9a9a9;
@@ -279,7 +282,7 @@ ul.nav li.dropdown:hover ul.dropdown-menu{ display: block; }
 }
 /* Mobile Portrait Size */
 @media only screen and (max-width: 479px) {
-	li.span4 .project-details {width:260px;}
+	li.span4 .project-details {width:94%;}
 }
 
 .project-details {
@@ -380,7 +383,7 @@ a.item-details-link:hover {background: #d8450b url(../img/gallery-item-icons.png
 .blog section {margin-bottom: 40px;}
 .blog article h3 {margin-top: 0px;}
 .blog article h3 a, .blog article h4 a,
-.blog article h3 a:hover, .blog article h4 a:hover {color:#333333; text-decoration: none;}
+.blog article h3 a:hover, .blog article h4 a:hover {color:#310000; text-decoration: none;}
 .blog h4 {line-height: 26px;}
 
 /* Mobile Landscape Size */

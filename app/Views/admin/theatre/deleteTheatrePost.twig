@@ -52,13 +52,12 @@
                                     {% for post in posts %}
                                         <tr>
                                             <td><input type="checkbox" name="items[]" value="{{ post.id }}"/></td>
-                                            <td><input style="border: 1px solid lightblue;" type="text" name="urlName[{{ post.id }}]" value="{{ post.urlName }}"></td>
-                                            <td><input style="border: 1px solid lightblue;" type="text" name="title[{{ post.id }}]" value="{{ post.title }}"></td>
-                                            <td><input style="border: 1px solid lightblue;" type="text" name="summary[{{ post.id }}]" value="{{ post.summary }}"></td>
-                                            <td><input style="border: 1px solid lightblue;" type="text" name="body[{{ post.id }}]" value="{{ post.body }}"></td>
-                                            <td><input style="border: 1px solid lightblue;" type="text" name="inCarousel[{{ post.id }}]" value="{{ post.inCarousel }}"></td>
-                                            <td><img style="max-height: 150px; max-width: 150px;"
-                                                     src="/img/theatre/{{ post.nameOfPhoto }}" alt="image"></td>
+                                            <td>{{ post.urlName }}</td>
+                                            <td>{{ post.title }}</td>
+                                            <td>{{ post.summary }}</td>
+                                            <td>{{ post.body }}</td>
+                                            <td>{{ post.inCarousel }}</td>
+                                            <td><img style="max-height: 150px; max-width: 150px;" src="/img/theatre/{{ post.nameOfPhoto }}" alt="image"></td>
                                         </tr>
                                     {% endfor %}
                                     </tbody>
