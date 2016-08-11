@@ -14,7 +14,7 @@ class TheatreDB extends DB implements PostDbInterface
 
         // set the resulting array to associative
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
-        $result = $stmt->fetchAll();
+        $result = $stmt->fetch();
 
         return $result;
     }

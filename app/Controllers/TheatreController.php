@@ -30,8 +30,6 @@ class TheatreController extends Controller
         $post = $theatreDB->getPostFromUrlName($this->post);
 
         if ( !empty($post) ){
-            $post = $post[0];
-
             echo $this->twig->render('single_post.twig', array('post' => $post, 'sector'=>$sector));
         } else { //if no items found
             echo '404';
