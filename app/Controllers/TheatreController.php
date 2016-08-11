@@ -71,4 +71,15 @@ class TheatreController extends Controller
         echo $this->twig->render( 'post_list.twig', array('posts'=>$posts, 'sector'=>$sector) );
     }
 
+    public function showInterviews()
+    {
+        $theatreDB = new TheatreDB();
+
+        $posts = $theatreDB->getAllInterviews();
+
+        $sector = $this->sector;
+
+        echo $this->twig->render( 'post_list.twig', array('posts'=>$posts, 'sector'=>$sector) );
+    }
+
 }

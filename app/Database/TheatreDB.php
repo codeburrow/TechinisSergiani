@@ -104,6 +104,21 @@ class TheatreDB extends DB implements PostDbInterface
         return $result;
     }
 
+    public function getAllInterviews()
+    {
+        $stmt = $this->conn->prepare("
+      SELECT * 
+      FROM kourtis.theatrePosts 
+      WHERE theatreType = 'interview';");
+        $stmt->execute();
+
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll();
+
+        return $result;
+    }
+
     public function addPost($data, $imageName)
     {
         try {
