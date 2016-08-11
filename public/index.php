@@ -12,6 +12,7 @@ $router = new Router\Router();
 $router->get('/', 'MainController', 'index');
 $router->get('/contact', 'MainController', 'contact');
 $router->get('/theatre', 'TheatreController', 'showAllPosts');
+$router->get('/theatre/critics', 'TheatreController', 'showCritics');
 $router->get('/theatre/competitions', 'TheatreController', 'showCompetitions');
 $router->get('/theatre/[-\w\d\?\!\.]+', 'TheatreController', 'single_post');
 $router->get('/cinema', 'CinemaController', 'showAllPosts');
