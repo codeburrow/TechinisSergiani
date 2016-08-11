@@ -14,6 +14,7 @@ $router->get('/contact', 'MainController', 'contact');
 $router->get('/theatre', 'TheatreController', 'showAllPosts');
 $router->get('/theatre/critics', 'TheatreController', 'showCritics');
 $router->get('/theatre/competitions', 'TheatreController', 'showCompetitions');
+$router->get('/theatre/plays', 'TheatreController', 'showPlays');
 $router->get('/theatre/[-\w\d\?\!\.]+', 'TheatreController', 'single_post');
 $router->get('/cinema', 'CinemaController', 'showAllPosts');
 $router->get('/cinema/[-\w\d\?\!\.]+', 'CinemaController', 'single_post');
