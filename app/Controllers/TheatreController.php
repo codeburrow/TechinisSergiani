@@ -38,4 +38,15 @@ class TheatreController extends Controller
         }
     }
 
+    public function showCompetitions()
+    {
+        $theatreDB = new TheatreDB();
+
+        $posts = $theatreDB->getAllCompetitions();
+
+        $sector = $this->sector;
+
+        echo $this->twig->render( 'post_list.twig', array('posts'=>$posts, 'sector'=>$sector) );
+    }
+
 }
