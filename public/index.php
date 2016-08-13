@@ -62,6 +62,7 @@ $router->get('/deleteFromCarouselDB', 'Admin\CarouselAdminController', 'deleteFr
 //---------- POST ----------//
 //Public
 $router->post('/contact', 'MainController', 'postContact');
+$router->post('/theatre/contactCompetition', 'TheatreController', 'postContactCompetition');
 //Admin - Add Posts
 $router->post('/admin/dashboard/addTheatrePost', 'Admin\TheatreAdminController', 'postAddPost');
 $router->post('/admin/dashboard/addCinemaPost', 'Admin\CinemaAdminController', 'postAddPost');
