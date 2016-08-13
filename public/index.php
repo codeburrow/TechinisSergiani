@@ -5,6 +5,10 @@ require_once __DIR__ . '/../app/setup.php';
 use Kourtis\Controllers;
 use Kourtis\Router;
 
+//Load .env variables
+$dotenv = new Dotenv\Dotenv(__DIR__ . '/../app/');
+$dotenv->load();
+
 $router = new Router\Router();
 
 //---------- GET ----------//
@@ -57,7 +61,7 @@ $router->get('/deleteFromCarouselDB', 'Admin\CarouselAdminController', 'deleteFr
 
 //---------- POST ----------//
 //Public
-$router->post('/contact', 'MainController', 'postContactDetails');
+$router->post('/contact', 'MainController', 'postContact');
 //Admin - Add Posts
 $router->post('/admin/dashboard/addTheatrePost', 'Admin\TheatreAdminController', 'postAddPost');
 $router->post('/admin/dashboard/addCinemaPost', 'Admin\CinemaAdminController', 'postAddPost');

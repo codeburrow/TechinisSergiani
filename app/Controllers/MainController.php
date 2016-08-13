@@ -4,6 +4,7 @@ namespace Kourtis\Controllers;
 use Kourtis\Database\CarouselDB;
 use Kourtis\Database\DB;
 use Kourtis\Database\TheatreDB;
+use Kourtis\Services\SwiftMailer;
 
 class MainController extends Controller
 {
@@ -25,9 +26,18 @@ class MainController extends Controller
         echo $this->twig->render('index.twig', array('latestPosts' => $latestPosts, 'carouselPosts' => $carouselPosts));
     }
 
-    public function contact()
+    public function contact($result=null)
     {
-        echo $this->twig->render('contact.twig');
+        echo $this->twig->render('contact.twig', array('result'=>$result));
+    }
+
+    public function postContact()
+    {
+        $mailer = new SwiftMailer();
+
+        $result = $mailer->sendEmail($_POST);
+
+        $this->contact($result);
     }
 
     public function error404()

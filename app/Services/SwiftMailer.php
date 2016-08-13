@@ -23,7 +23,7 @@ class SwiftMailer
         $result = array();
 
         //Check if $_POST is empty and sanitize
-        $name = $data['name'];
+        $name = $data['fullName'];
         $email = $data['email'];
         $subject = $data['subject'];
         $message = $data['message'];
@@ -41,9 +41,9 @@ class SwiftMailer
         }
 
         // Create the Transport
-        $transport = Swift_SmtpTransport::newInstance('mail.fabgraphics.gr')
-			->setUsername('support@fabgraphics.gr')
-			->setPassword('Davrazos612')
+        $transport = Swift_SmtpTransport::newInstance('mail.texnisergiani.gr')
+			->setUsername(getenv('EMAIL'))
+			->setPassword(getenv('EMAIL_PASS'))
         ;
 
         // Create the Mailer using your created Transport
@@ -53,11 +53,11 @@ class SwiftMailer
             // Create the message
             $message = Swift_Message::newInstance()
                 // Give the message a subject
-                ->setSubject('fabgraphics.gr: ' . $cleanSubject)
+                ->setSubject('texnisergiani.gr: ' . $cleanSubject)
                 // Set the From address with an associative array
                 ->setFrom(array($cleanEmail => $cleanName))
                 // Set the To addresses with an associative array
-                ->setTo(array('support@fabgraphics.gr' => 'Fab Support Team'))
+                ->setTo(array( getenv('EMAIL') => 'Texnis Sergiani Support Team'))
                 // Give it a body
                 ->setBody("Sender's Email: " . $cleanEmail . "\n\n" . $cleanMessage);
 
@@ -80,12 +80,12 @@ class SwiftMailer
         //Confirm Email Sent
         if ($messageSent > 0){
             $result['success'] = 1;
-            $result['message'] = "Thank you for your email.\n We'll be in touch soon.";
+            $result['message'] = "Ευχαριστουμε για την επικοινωνια.\n Θα σας απαντησουμε συντομα.";
 
             return $result;
         } else {
             $result['success'] = 0;
-            $result['message'] = "Error: We couldn't send your email. \n Please contact us at 'fab.agia@gmail.com'.";
+            $result['message'] = "Σφαλμα. Κατι δεν πηγε καλα. \n Παρακαλω επικοινωνηστε μαζι μας στο 'support@texnisergiani.gr'.";
 
             return $result;
         }
