@@ -7,9 +7,9 @@
     <div class="row"><!--Container row-->
 
         {% if result.success == 1 %}
-            <h4 style="color: forestgreen">{{ result.message }}</h4>
+            <h4 class="alert alert-success" style="text-align: center;">{{ result.message }}</h4>
         {% elseif result.success == 0 %}
-            <h4 style="color: tomato">{{ result.message }}</h4>
+            <h4 class="alert alert-error" style="text-align: center;">{{ result.message }}</h4>
         {% endif %}
 
         <div class="span6 contact"><!--Begin page content column-->
@@ -19,10 +19,6 @@
                 iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt
                 sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et
                 urna.</p>
-
-            <div class="alert alert-success">
-                Well done! You successfully read this important alert message.
-            </div>
 
             <form action="/contact" method="post" id="contact-form">
                 <div class="input-prepend">
@@ -55,26 +51,27 @@
         <div class="span6 contact"><!--Begin page content column-->
 
             <h2 style="text-align: center;">About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc
-                iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt
-                sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et
-                urna.</p>
+
+            <p>
+                Ο Αλέξανδρος Κούρτης γεννήθηκε τον Μάρτιο του 1991 στην Αθήνα με κύριο στόχο καθώς φαίνεται να ασχοληθεί με τον χώρο της δημοσιογραφίας και των media. Σπούδασε στο ΤΕΙ Πληροφορικής και ΜΜΕ Δυτικής Ελλάδος ενώ έχει παρακολουθήσει σειρά σεμιναρίων και μαθημάτων υποκριτικής, αυτοσχεδιασμού, σωματικού θεάτρου και κινησιολογίας.
+            </p>
+            <img src="/img/test/kourtis.jpg" style="float: right; max-width: 100%; height: auto; margin: 10px; border: 4px solid darkgrey; border-radius: 15%" alt="author">
+
+            <p>
+                Παράλληλα με τις σπουδές ξεκίνησε τη δράση του στον χώρο παρουσιάζοντας συνεντεύξεις με πρόσωπα του θεάτρου και της τηλεόρασης στο Tvnea.com. Η συνέχεια τον βρίσκει να συνεργάζεται με την δημοσιογράφο Ζήνα Κουτσελίνη στο Enter TV, για τα επόμενα δύο χρόνια, τόσο στο κομμάτι των συνεντεύξεων όσο και ευρύτερα στο κομμάτι του καλλιτεχνικού ρεπορτάζ. Το καλοκαίρι του 2015 συναντάει τον δημοσιογράφο Τάσο Δούση και αναλαμβάνει την αρχισυνταξία του Youweekly.gr που ανήκει στον όμιλο Dousiscom. Επόμενη συνεργασία εκείνη με την δημοσιογράφο Ειρήνη Νικολοπούλου στο ειδησεογραφικό site Eirinika.gr, η οποία ξεκίνησε τον Οκτώβριο του 2015 και ολοκληρώθηκε τον Απρίλιο του 2016.
+            </p>
 
             <blockquote>
                 Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat.
             </blockquote>
 
-            <img src="/img/test/kourtis.jpg" style="float: right; max-width: 100%; height: auto; margin-bottom: 10px; border: 4px solid darkgrey; border-radius: 15%" alt="author">
+            <p>
+                Η αγάπη για το ραδιόφωνο υπήρχε ανέκαθεν στη ζωή του, μιας και είναι λάτρης όλων των ειδών της μουσικής, αλλά την απόφαση να εξερευνήσει το συγκεκριμένο μέσο την παίρνει τον Οκτώβριο του 2015 στην φιλόξενη και δημιουργική στέγη του Μεταδεύτερου. Καταλυτικό ρόλο στη λήψη αυτής της απόφασης είναι δίχως αμφιβολία ο συνδυασμός δύο μεγάλων του αδυναμιών. Της τέχνης και της μουσικής. Έτσι δημιουργείται το εβδομαδιαίο "Τέχνης σεργιάνι" όπου μαζί με τον εκάστοτε καλεσμένο του συζητάει και προτείνει οτιδήποτε λαμβάνει χώρα στην πόλη και αποτελεί μια όμορφη θεατρική επιλογή. Έπειτα από μια επιτυχημένη σεζόν και μια άριστη συνεργασία με τους ανθρώπους του σταθμού, με 32 εκπομπές και 40 καλεσμένους στο στούντιο, η ραδιοφωνική εκπομπή συνεχίζει το ταξίδι της για δεύτερη συνεχόμενη σεζόν.
+            </p>
 
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc
-                iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt
-                sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et
-                urna.</p>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc
-                iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt
-                sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et
-                urna.</p>
+            <p>
+                Σεπτέμβρης 2016 και η μεγάλη αγάπη στον θεατρικό χώρο οδηγεί στην δημιουργία του texnisergiani.gr. Ένα ενημερωτικό site που με σεβασμό και εκτίμηση στην τέχνη της υποκριτικής και στους ανθρώπους της έχει ως στόχο να παρακολουθεί καθημερινά όσα συμβαίνουν στην Αθήνα και χρήζουν προβολής και αξιολόγησης. Μέσα από ενδιαφέρουσες συνεντεύξεις, ολοκληρωμένες κριτικές, αποκλειστικές θεατρικές ειδήσεις και ενημερώσεις για ακροάσεις, το texnisergiani.gr επιδιώκει να προσεγγίσει τα θεατρικά δρώμενα με αντικειμενικότητα και σοβαρότητα δίχως κατευθυνόμενα συμφέροντα ή άλλες μεθόδους επιρροής της κοινής γνώμης που δεν απουσιάζουν προφανώς από την πλειονότητα των σημερινών Μέσων Μαζικής Ενημέρωσης.
+            </p>
 
         </div> <!--End page content column-->
 
