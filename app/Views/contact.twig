@@ -6,10 +6,12 @@
 
     <div class="row"><!--Container row-->
 
-        {% if result.success == 1 %}
-            <h4 class="alert alert-success" style="text-align: center;">{{ result.message }}</h4>
-        {% elseif result.success == 0 %}
-            <h4 class="alert alert-error" style="text-align: center;">{{ result.message }}</h4>
+        {% if result is not null %}
+            {% if result.success == 1 %}
+                <h4 class="alert alert-success" style="text-align: center;">{{ result.message }}</h4>
+            {% elseif result.success == 0 %}
+                <h4 class="alert alert-error" style="text-align: center;">{{ result.message }}</h4>
+            {% endif %}
         {% endif %}
 
         <div class="span6 contact"><!--Begin page content column-->
