@@ -17,6 +17,8 @@ $router->get('/', 'MainController', 'index');
 $router->get('/contact', 'MainController', 'contact');
 $router->get('/theatre', 'TheatreController', 'showAllPosts');
 $router->get('/theatre/critics', 'TheatreController', 'showCritics');
+$router->get('/theatre/hearings', 'TheatreController', 'showHearings');
+$router->get('/theatre/news', 'TheatreController', 'showNews');
 $router->get('/theatre/competitions', 'TheatreController', 'showCompetitions');
 $router->get('/theatre/plays', 'TheatreController', 'showPlays');
 $router->get('/theatre/interviews', 'TheatreController', 'showInterviews');

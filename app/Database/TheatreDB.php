@@ -89,6 +89,36 @@ class TheatreDB extends DB implements PostDbInterface
         return $result;
     }
 
+    public function getAllHearings()
+    {
+        $stmt = $this->conn->prepare("
+      SELECT * 
+      FROM kourtis.theatrePosts 
+      WHERE theatreType = 'hearing';");
+        $stmt->execute();
+
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll();
+
+        return $result;
+    }
+
+    public function getAllNews()
+    {
+        $stmt = $this->conn->prepare("
+      SELECT * 
+      FROM kourtis.theatrePosts 
+      WHERE theatreType = 'news';");
+        $stmt->execute();
+
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll();
+
+        return $result;
+    }
+
     public function getAllPlays()
     {
         $stmt = $this->conn->prepare("
