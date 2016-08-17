@@ -11,11 +11,19 @@ class TheatreAdminController extends AdminController
         parent::__construct($data);
     }
 
-    public function addPost(){
-        if ($this->adminIsLoggedIn())
-            echo $this->twig->render('theatre/addTheatrePost.twig');
-        else
+    public function addPost()
+    {
+        if ($this->adminIsLoggedIn()) {
+
+            $db = new TheatreDB();
+
+            $types = $db->getTheatreTypes();
+
+            echo $this->twig->render('theatre/addTheatrePost.twig', array('types'=>$types));
+
+        } else {
             echo $this->twig->render('login.twig');
+        }
     }
 
     public function postAddPost(){

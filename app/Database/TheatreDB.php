@@ -177,5 +177,19 @@ class TheatreDB extends DB implements PostDbInterface
             return $e->getMessage();
         }
     }
+
+    public function getTheatreTypes()
+    {
+        $stmt = $this->conn->prepare("
+      SELECT * 
+      FROM kourtis.theatreTypes;");
+        $stmt->execute();
+
+        // set the resulting array to associative
+        $stmt->setFetchMode(PDO::FETCH_ASSOC);
+        $result = $stmt->fetchAll();
+
+        return $result;
+    }
     
 }
