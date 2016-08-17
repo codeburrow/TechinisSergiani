@@ -28,7 +28,7 @@
                     {% for post in posts %}
                         <li class="span6 blog-post-item">
                             <div class="blog-post-hover hidden-phone hidden-tablet">
-                                <p><a href="/{{ sector }}/{{ post.urlName }}" class="clearfix">{{ post.urlName }}</a>
+                                <p><a href="/{{ sector }}/{{ post.urlName }}" class="clearfix">{{ post.title }}</a>
                                     {{ post.summary }}</p>
                             </div>
                             <a href="/{{ sector }}/{{ post.urlName }}"><img src="/img/{{ sector }}/{{ post.nameOfPhoto }}" alt="Post Thumb"></a>

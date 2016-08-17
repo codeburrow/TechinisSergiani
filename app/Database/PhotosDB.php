@@ -8,7 +8,7 @@ class PhotosDB extends DB implements PostDbInterface
 {
     public function getPostFromUrlName($urlName)
     {
-        $stmt = $this->conn->prepare("SELECT * FROM kourtis.photosPosts WHERE urlName LIKE :urlName");
+        $stmt = $this->conn->prepare("SELECT * FROM kourtis.photosPosts WHERE urlName LIKE :urlName ORDER BY showDate DESC;");
         $stmt->bindParam(':urlName', $urlName);
         $stmt->execute();
 

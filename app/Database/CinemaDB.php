@@ -34,7 +34,7 @@ class CinemaDB extends DB implements PostDbInterface
 
     public function getAllPosts()
     {
-        $stmt = $this->conn->prepare("SELECT * FROM kourtis.cinemaPosts");
+        $stmt = $this->conn->prepare("SELECT * FROM kourtis.cinemaPosts ORDER BY showDate DESC;");
         $stmt->execute();
 
         // set the resulting array to associative

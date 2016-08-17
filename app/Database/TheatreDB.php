@@ -34,7 +34,7 @@ class TheatreDB extends DB implements PostDbInterface
 
     public function getAllPosts()
     {
-        $stmt = $this->conn->prepare("SELECT * FROM kourtis.theatrePosts");
+        $stmt = $this->conn->prepare("SELECT * FROM kourtis.theatrePosts ORDER BY showDate DESC;");
         $stmt->execute();
 
         // set the resulting array to associative
@@ -48,7 +48,7 @@ class TheatreDB extends DB implements PostDbInterface
     {
         $stmt = $this->conn->prepare("SELECT * 
       FROM kourtis.theatrePosts 
-      ORDER BY kourtis.theatrePosts.id DESC
+      ORDER BY kourtis.theatrePosts.showDate DESC
       LIMIT $numberOfPosts");
         $stmt->execute();
 
@@ -64,7 +64,8 @@ class TheatreDB extends DB implements PostDbInterface
         $stmt = $this->conn->prepare("
       SELECT * 
       FROM kourtis.theatrePosts 
-      WHERE theatreType = 'competition';");
+      WHERE theatreType = 'competition'
+      ORDER BY showDate DESC;");
         $stmt->execute();
 
         // set the resulting array to associative
@@ -79,7 +80,8 @@ class TheatreDB extends DB implements PostDbInterface
         $stmt = $this->conn->prepare("
       SELECT * 
       FROM kourtis.theatrePosts 
-      WHERE theatreType = 'critic';");
+      WHERE theatreType = 'critic'
+      ORDER BY showDate DESC;");
         $stmt->execute();
 
         // set the resulting array to associative
@@ -94,7 +96,8 @@ class TheatreDB extends DB implements PostDbInterface
         $stmt = $this->conn->prepare("
       SELECT * 
       FROM kourtis.theatrePosts 
-      WHERE theatreType = 'hearing';");
+      WHERE theatreType = 'hearing'
+      ORDER BY showDate DESC;");
         $stmt->execute();
 
         // set the resulting array to associative
@@ -109,7 +112,8 @@ class TheatreDB extends DB implements PostDbInterface
         $stmt = $this->conn->prepare("
       SELECT * 
       FROM kourtis.theatrePosts 
-      WHERE theatreType = 'news';");
+      WHERE theatreType = 'news'
+      ORDER BY showDate DESC;");
         $stmt->execute();
 
         // set the resulting array to associative
@@ -124,7 +128,8 @@ class TheatreDB extends DB implements PostDbInterface
         $stmt = $this->conn->prepare("
       SELECT * 
       FROM kourtis.theatrePosts 
-      WHERE theatreType = 'play';");
+      WHERE theatreType = 'play'
+      ORDER BY showDate DESC;");
         $stmt->execute();
 
         // set the resulting array to associative
@@ -139,7 +144,8 @@ class TheatreDB extends DB implements PostDbInterface
         $stmt = $this->conn->prepare("
       SELECT * 
       FROM kourtis.theatrePosts 
-      WHERE theatreType = 'interview';");
+      WHERE theatreType = 'interview'
+      ORDER BY showDate DESC;");
         $stmt->execute();
 
         // set the resulting array to associative
