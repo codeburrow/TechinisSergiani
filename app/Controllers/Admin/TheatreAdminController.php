@@ -27,32 +27,37 @@ class TheatreAdminController extends AdminController
     }
 
     public function postAddPost(){
-        $DB = new TheatreDB();
-        $uploadImageService = new uploadImageService();
-        $success = false;
 
-        //Try to upload image
-        $uploadError = $uploadImageService->uploadImage('img/theatre/');
-        if (empty($uploadError)) {
+//        var_dump($_POST);
+//        var_dump($_FILES);
 
-            //Add row to db
-            $nameOfImage = $_FILES['image']['name'];
-            $result = $DB->addPost($_POST, $nameOfImage);
-
-            if (empty($result)) { //successfully added row
-                $flashMessage = "Post Succesfully Added";
-                $success = true;
-            } else { //failed to add row
-                $flashMessage = $result;
-                //Delete uploaded image from server
-                unlink("img/theatre/$nameOfImage");
-            }
-
-        } else { //image failed to upload
-            $flashMessage = $uploadError . "\nError: Could not upload image.";
-        }
-
-        echo $this->twig->render('theatre/addTheatrePost.twig', array('flashMessage' => $flashMessage, 'success' => $success));
+        //ToDo
+//        $DB = new TheatreDB();
+//        $uploadImageService = new uploadImageService();
+//        $success = false;
+//
+//        //Try to upload image
+//        $uploadError = $uploadImageService->uploadImage('img/theatre/');
+//        if (empty($uploadError)) {
+//
+//            //Add row to db
+//            $nameOfImage = $_FILES['image']['name'];
+//            $result = $DB->addPost($_POST, $nameOfImage);
+//
+//            if (empty($result)) { //successfully added row
+//                $flashMessage = "Post Succesfully Added";
+//                $success = true;
+//            } else { //failed to add row
+//                $flashMessage = $result;
+//                //Delete uploaded image from server
+//                unlink("img/theatre/$nameOfImage");
+//            }
+//
+//        } else { //image failed to upload
+//            $flashMessage = $uploadError . "\nError: Could not upload image.";
+//        }
+//
+//        echo $this->twig->render('theatre/addTheatrePost.twig', array('flashMessage' => $flashMessage, 'success' => $success));
     }
 
     public function editPost(){
