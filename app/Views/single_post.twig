@@ -54,7 +54,7 @@
                         {% if post.video is not null %}
                             <!--Video Widget-->
                             <h5 class="title-bg">Video Widget</h5>
-                            <iframe src="{{ post.video }}" width="500" height="280"></iframe>
+                            <iframe src="{{ post.video }}" allowfullscreen="allowfullscreen"  width="500" height="280"></iframe>
                         {% endif %}
 
                         {% if post.theatreType == 'competition' %}
