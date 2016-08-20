@@ -1,3 +1,17 @@
+{# Tiny MCE #}
+<script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+<script>tinymce.init({
+    selector:'.mce_ta',
+        theme: 'modern',
+        plugins: [
+            'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+            'searchreplace wordcount visualblocks visualchars code fullpage fullscreen insertdatetime media nonbreaking',
+            'save table contextmenu directionality emoticons template paste textcolor'
+        ],
+        content_css: 'css/content.css',
+        toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media | forecolor backcolor emoticons'
+});</script>
+
 <!-- Bootstrap -->
 <link href="/assets/gentelella/vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
 <!-- Font Awesome -->
