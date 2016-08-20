@@ -11,7 +11,7 @@ class TheatreAdminController extends AdminController
         parent::__construct($data);
     }
 
-    public function addPost()
+    public function addPost($result=null)
     {
         if ($this->adminIsLoggedIn()) {
 
@@ -19,7 +19,7 @@ class TheatreAdminController extends AdminController
 
             $types = $db->getTheatreTypes();
 
-            echo $this->twig->render('theatre/addTheatrePost.twig', array('types'=>$types));
+            echo $this->twig->render('theatre/addTheatrePost.twig', array('result'=>$result, 'types'=>$types));
 
         } else {
             echo $this->twig->render('login.twig');
@@ -31,33 +31,34 @@ class TheatreAdminController extends AdminController
 //        var_dump($_POST);
 //        var_dump($_FILES);
 
-        //ToDo
-//        $DB = new TheatreDB();
-//        $uploadImageService = new uploadImageService();
-//        $success = false;
-//
-//        //Try to upload image
-//        $uploadError = $uploadImageService->uploadImage('img/theatre/');
-//        if (empty($uploadError)) {
-//
-//            //Add row to db
-//            $nameOfImage = $_FILES['image']['name'];
-//            $result = $DB->addPost($_POST, $nameOfImage);
-//
-//            if (empty($result)) { //successfully added row
-//                $flashMessage = "Post Succesfully Added";
-//                $success = true;
-//            } else { //failed to add row
-//                $flashMessage = $result;
-//                //Delete uploaded image from server
-//                unlink("img/theatre/$nameOfImage");
-//            }
-//
-//        } else { //image failed to upload
-//            $flashMessage = $uploadError . "\nError: Could not upload image.";
-//        }
-//
-//        echo $this->twig->render('theatre/addTheatrePost.twig', array('flashMessage' => $flashMessage, 'success' => $success));
+        $DB = new TheatreDB();
+        $uploadImageService = new uploadImageService();
+        $success = false;
+
+        //Try to upload image
+        $uploadError = $uploadImageService->uploadImage('img/theatre/');
+        if (empty($uploadError)) {
+
+            //Add row to db
+            $nameOfImage = $_FILES['image']['name'];
+            $addPostResult = $DB->addPost($_POST, $nameOfImage);
+
+            if (empty($addPostResult)) { //successfully added row
+                $result['message'] = "Post Successfully Added";
+                $result['success'] = true;
+            } else { //failed to add row
+                $result['message'] = $addPostResult;
+                $result['success'] = false;
+                //Delete uploaded image from server
+                unlink("img/theatre/$nameOfImage");
+            }
+
+        } else { //image failed to upload
+            $result['message'] = $uploadError . "\nError: Could not upload image.";;
+            $result['success'] = false;
+        }
+
+        echo $this->addPost($result);
     }
 
     public function editPost(){

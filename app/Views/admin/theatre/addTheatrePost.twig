@@ -19,10 +19,10 @@
 
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="x_content">
-                            {% if success == true %}
-                                <h1 style="color: forestgreen;">{{ flashMessage }}</h1>
+                            {% if result.success == true %}
+                                <h1 style="color: forestgreen;">{{ result.message }}</h1>
                             {% else %}
-                                <h1 style="color: tomato;">{{ flashMessage }}</h1>
+                                <h1 style="color: tomato;">{{ result.message }}</h1>
                             {% endif %}
                             <br/>
                             <form method="post" action="/admin/dashboard/addTheatrePost" id="addItemForm" data-parsley-validate
@@ -100,8 +100,8 @@
                                 <div class="ln_solid"></div>
                                 <div class="form-group">
                                     <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                                        <button type="submit" class="btn btn-danger">Cancel</button>
-                                        <button type="submit" class="btn btn-success" name="submit">Submit</button>
+                                        <button type="reset" class="btn btn-danger">Cancel</button>
+                                        <button type="submit" name="submit" class="btn btn-success">Submit</button>
                                     </div>
                                 </div>
 

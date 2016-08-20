@@ -158,13 +158,15 @@ class TheatreDB extends DB implements PostDbInterface
     public function addPost($data, $imageName)
     {
         try {
-            $stmt = $this->conn->prepare("INSERT INTO kourtis.theatrePosts (`title`, `summary`, `urlName`, `body`, `nameOfPhoto`)
-    VALUES (:title, :summary, :urlName, :body, :nameOfPhoto)");
+            $stmt = $this->conn->prepare("INSERT INTO kourtis.theatrePosts (`title`, `summary`, `urlName`, `body`, `nameOfPhoto`, `theatreType`, `showDate`)
+    VALUES (:title, :summary, :urlName, :body, :nameOfPhoto, :theatreType, :showDate)");
             $stmt->bindParam(':title', $data['title']);
             $stmt->bindParam(':summary', $data['summary']);
             $stmt->bindParam(':urlName', $data['title']);
             $stmt->bindParam(':body', $data['body']);
             $stmt->bindParam(':nameOfPhoto', $imageName);
+            $stmt->bindParam(':theatreType', $data['theatreType']);
+            $stmt->bindParam(':showDate', $data['showDate']);
             $result = $stmt->execute();
 
             if ($result == true)
