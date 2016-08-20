@@ -50,9 +50,12 @@
                         </blockquote>
 
                         <p>Nam sit amet felis non lorem faucibus rhoncus vitae id dui.Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
-                        <!--Video Widget-->
-                        <h5 class="title-bg">Video Widget</h5>
-                        <iframe src="http://player.vimeo.com/video/24496773" width="500" height="280"></iframe>
+
+                        {% if post.video is not null %}
+                            <!--Video Widget-->
+                            <h5 class="title-bg">Video Widget</h5>
+                            <iframe src="{{ post.video }}" width="500" height="280"></iframe>
+                        {% endif %}
 
                         {% if post.theatreType == 'competition' %}
                             <h5 class="title-bg" style="margin-top: 50px;">Δηλώστε Συμμετοχή!</h5>
