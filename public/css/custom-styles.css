@@ -598,7 +598,13 @@ p.side {margin-bottom: 20px;}
 		overflow: auto;
 		margin-bottom: 20px;
 	}
-	.footer-sub .right {display: none;}
+	.footer-sub .right {
+		float: none;
+		text-align:center;
+		max-width: 60%;
+		margin: auto;
+		display: block;
+	}
 }
 ul.img-feed li {
 	float: left; 
