@@ -64,7 +64,7 @@ class TheatreDB extends DB implements PostDbInterface
         $stmt = $this->conn->prepare("
       SELECT * 
       FROM kourtis.theatrePosts 
-      WHERE theatreType = 'competition'
+      WHERE theatreType = 4
       ORDER BY showDate DESC;");
         $stmt->execute();
 
@@ -80,7 +80,7 @@ class TheatreDB extends DB implements PostDbInterface
         $stmt = $this->conn->prepare("
       SELECT * 
       FROM kourtis.theatrePosts 
-      WHERE theatreType = 'critic'
+      WHERE theatreType = 1
       ORDER BY showDate DESC;");
         $stmt->execute();
 
@@ -96,7 +96,7 @@ class TheatreDB extends DB implements PostDbInterface
         $stmt = $this->conn->prepare("
       SELECT * 
       FROM kourtis.theatrePosts 
-      WHERE theatreType = 'hearing'
+      WHERE theatreType = 6
       ORDER BY showDate DESC;");
         $stmt->execute();
 
@@ -112,7 +112,7 @@ class TheatreDB extends DB implements PostDbInterface
         $stmt = $this->conn->prepare("
       SELECT * 
       FROM kourtis.theatrePosts 
-      WHERE theatreType = 'news'
+      WHERE theatreType = 5
       ORDER BY showDate DESC;");
         $stmt->execute();
 
@@ -128,7 +128,7 @@ class TheatreDB extends DB implements PostDbInterface
         $stmt = $this->conn->prepare("
       SELECT * 
       FROM kourtis.theatrePosts 
-      WHERE theatreType = 'play'
+      WHERE theatreType = 3
       ORDER BY showDate DESC;");
         $stmt->execute();
 
@@ -144,7 +144,7 @@ class TheatreDB extends DB implements PostDbInterface
         $stmt = $this->conn->prepare("
       SELECT * 
       FROM kourtis.theatrePosts 
-      WHERE theatreType = 'interview'
+      WHERE theatreType = 2
       ORDER BY showDate DESC;");
         $stmt->execute();
 
