@@ -1,6 +1,7 @@
 <?php
 namespace Kourtis\Database;
 
+use Kourtis\Transformers\URL_Transformer;
 use PDO;
 use PDOException;
 
@@ -157,12 +158,16 @@ class TheatreDB extends DB implements PostDbInterface
 
     public function addPost($data, $imageName)
     {
+        $urlTransformer = new URL_Transformer();
+        $urlName = $urlTransformer->removeSpacesAndParentheses($data['urlName']);
+
+
         try {
             $stmt = $this->conn->prepare("INSERT INTO kourtis.theatrePosts (`title`, `summary`, `urlName`, `body`, `nameOfPhoto`, `theatreType`, `showDate`)
     VALUES (:title, :summary, :urlName, :body, :nameOfPhoto, :theatreType, :showDate)");
             $stmt->bindParam(':title', $data['title']);
             $stmt->bindParam(':summary', $data['summary']);
-            $stmt->bindParam(':urlName', $data['title']);
+            $stmt->bindParam(':urlName', $urlName);
             $stmt->bindParam(':body', $data['body']);
             $stmt->bindParam(':nameOfPhoto', $imageName);
             $stmt->bindParam(':theatreType', $data['theatreType']);
