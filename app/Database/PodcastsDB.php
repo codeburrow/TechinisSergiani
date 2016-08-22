@@ -34,7 +34,7 @@ class PodcastsDB extends DB implements PostDbInterface
 
     public function getAllPosts()
     {
-        $stmt = $this->conn->prepare("SELECT * FROM kourtis.podcastsPosts");
+        $stmt = $this->conn->prepare("SELECT * FROM kourtis.podcastsPosts ORDER BY season DESC, showDate DESC;");
         $stmt->execute();
 
         // set the resulting array to associative

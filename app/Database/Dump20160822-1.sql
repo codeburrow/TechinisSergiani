@@ -158,10 +158,12 @@ CREATE TABLE `podcastsPosts` (
   `nameOfPhoto` varchar(45) DEFAULT 'null',
   `inCarousel` int(11) NOT NULL DEFAULT '0',
   `showDate` date NOT NULL,
+  `video` varchar(300) DEFAULT NULL,
+  `season` varchar(45) DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `urlName_UNIQUE` (`urlName`),
   UNIQUE KEY `title_UNIQUE` (`title`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -170,7 +172,7 @@ CREATE TABLE `podcastsPosts` (
 
 LOCK TABLES `podcastsPosts` WRITE;
 /*!40000 ALTER TABLE `podcastsPosts` DISABLE KEYS */;
-INSERT INTO `podcastsPosts` VALUES (3,'TestPost','TestPost','asdf','asdf','headshot3.jpg',0,'0000-00-00');
+INSERT INTO `podcastsPosts` VALUES (3,'TestPost','TestPost','The summary of the post.','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.','headshot3.jpg',0,'2016-12-08','https://player.vimeo.com/video/24496773','1'),(4,'Another Beautiful Podcast','thepodcast2','What a nice summary of the podcast!','The body of the podcasts is awesom!!','headshot3.jpg',0,'2016-12-09','https://www.youtube.com/embed/sBzRwzY7G-k','1'),(5,'Yet Another Podcast','thepodcast3','Sumamry Aummsary','Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.','headshot3.jpg',0,'2016-12-10','https://player.vimeo.com/video/24496773','2');
 /*!40000 ALTER TABLE `podcastsPosts` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -267,4 +269,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-08-22 14:46:23
+-- Dump completed on 2016-08-22 22:26:57

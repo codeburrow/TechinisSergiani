@@ -1,0 +1,77 @@
+{% extends "master.twig" %}
+
+{% block title %} Texnis Sergiani {% endblock title %}
+
+{% block content %}
+
+    <!--Search-->
+    {#<section class="align-right">#}
+    {#<div class="input-append">#}
+    {#<form action="#">#}
+    {#<input id="appendedInputButton" size="16" type="text" placeholder="Search">#}
+    {#<button class="btn" type="button"><i class="icon-search"></i></button>#}
+    {#</form>#}
+    {#</div>#}
+    {#</section>#}
+
+    <!-- Blog Content
+    ================================================== -->
+    <div class="row">
+
+        <!-- Blog Posts
+        ================================================== -->
+        <div class="span10 offset1 blog" style="">
+
+            {# Podacsts Info #}
+            <article>
+                <h3 class="title-bg" style="text-align: center;">On-Demand Podcasts</h3>
+                <div class="post-summary">
+                    <div style="text-align: center;">
+                        <a href="" style="max-width:100%; margin: 0 auto;">
+                            <img src="/img/gallery/podcasts_ex.jpg" alt="Post Thumb">
+                        </a>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
+                    <p style="margin-top: -20px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis mattis lorem, quis gravida nunc iaculis ac. Proin tristique tellus in est vulputate luctus fermentum ipsum molestie. Vivamus tincidunt sem eu magna varius elementum. Maecenas felis tellus, fermentum vitae laoreet vitae, volutpat et urna. Nulla faucibus ligula eget ante varius ac euismod odio placerat. Nam sit amet felis non lorem faucibus rhoncus vitae id dui.</p>
+                </div>
+            </article>
+
+            <!-- Podcasts -->
+            {% for post in posts %}
+                <article>
+                    <h3 class="title-bg" style="text-align: center;">{{ post.title }}</h3>
+                    <div class="post-summary">
+                        <div style="text-align: center;">
+                            <a href="" style="max-width:100%; margin: 0 auto;">
+                                {#<img src="/img/gallery/post-img-1.jpg" alt="Post Thumb">#}
+                                <iframe src="{{ post.video }}" allowfullscreen="allowfullscreen" width="80%"
+                                        height="280"></iframe>
+                            </a>
+                        </div>
+                        <p>{{ post.body }}</p>
+                        <div class="post-summary-footer">
+                            {#<button class="btn btn-small btn-inverse" type="button">Read more</button>#}
+                            <ul class="post-data">
+                                <li><i class="icon-calendar"></i> {{ post.showDate }} </li>
+                                <li><i class="icon-tags"></i> season {{ post.season }} </li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+            {% endfor %}
+
+            <!-- Pagination -->
+            <div class="pagination">
+                <ul>
+                    <li class="active"><a href="#">Prev</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">Next</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+{% endblock content %}

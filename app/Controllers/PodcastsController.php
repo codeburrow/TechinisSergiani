@@ -18,7 +18,7 @@ class PodcastsController extends Controller
 
         $sector = $this->sector;
 
-        echo $this->twig->render( 'post_list.twig', array('posts'=>$posts, 'sector'=>$sector) );
+        echo $this->twig->render( 'podcasts_list.twig', array('posts'=>$posts, 'sector'=>$sector) );
     }
 
     public function single_post()
