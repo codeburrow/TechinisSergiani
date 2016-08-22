@@ -43,8 +43,11 @@ class Router
     public function submit()
     {
         $found = 0;
-        $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); //get the url
-        
+        $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); //get the url without the domain
+        var_dump($path);
+        $path = urldecode($path); //if unicode, decode percent-encoding
+        var_dump($path);
+
         /**
          * If last char in URL is '/' redirect without it
          * and also check if url is root '/' because this would result
@@ -61,6 +64,7 @@ class Router
             //Map URL to page
             foreach ($this->_getUri as $key => $value)
             {
+                var_dump($value);
                 if ( $found = preg_match("#^$value$#", $path) )
                 {
 //                    echo $key . ' => ' . $value; //See what the $path returns

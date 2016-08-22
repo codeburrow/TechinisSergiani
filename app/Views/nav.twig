@@ -42,21 +42,22 @@
         ================================================== -->
         <form action="#" id="mobile-nav" class="visible-phone">
             <div class="mobile-nav-select">
-                <select onchange="window.open(this.options[this.selectedIndex].value,'_top')">
+                <select style="border: 1px solid #E59700" onchange="window.open(this.options[this.selectedIndex].value,'_top')">
                     <option value="">Πλοήγηση...</option>
-                    <option value="#">ΘΕΑΤΡΟ</option>
-                    <option value="/theatre/critics">- Κριτικές</option>
-                    <option value="/theatre/news">- Ειδήσεις</option>
-                    <option value="/theatre/hearings">- Ακροάσεις</option>
-                    <option value="/theatre/competitions">- Διαγωνισμοί</option>
-                    <option value="/theatre/plays">- Παραστάσεις</option>
-                    <option value="/theatre/interviews">- Συνεντεύξεις</option>
-                    {#<option value="">- Αποκλειστικά</option>#}
-                    <option value="/cinema">ΣΙΝΕΜΑ</option>
-                    <option value="/music">ΜΟΥΣΙΚΗ</option>
-                    <option value="/photos">ΦΩΤΟΓΡΑΦΙΑ</option>
-                    <option value="/podcasts">ΕΚΠΟΜΠΕΣ</option>
-                    <option value="/contact">ΕΠΙΚΟΙΝΩΝΙΑ</option>
+                    <optgroup label="ΘΕΑΤΡΟ">
+                        <option value="/theatre/critics">- Κριτικές</option>
+                        <option value="/theatre/news">- Ειδήσεις</option>
+                        <option value="/theatre/hearings">- Ακροάσεις</option>
+                        <option value="/theatre/competitions">- Διαγωνισμοί</option>
+                        <option value="/theatre/plays">- Παραστάσεις</option>
+                        <option value="/theatre/interviews">- Συνεντεύξεις</option>
+                        {#<option value="">- Αποκλειστικά</option>#}
+                    </optgroup>
+                    <option style="font-weight: bold;" value="/cinema">ΣΙΝΕΜΑ</option>
+                    <option style="font-weight: bold;" value="/music">ΜΟΥΣΙΚΗ</option>
+                    <option style="font-weight: bold;" value="/photos">ΦΩΤΟΓΡΑΦΙΑ</option>
+                    <option style="font-weight: bold;" value="/podcasts">ΕΚΠΟΜΠΕΣ</option>
+                    <option style="font-weight: bold;" value="/contact">ΕΠΙΚΟΙΝΩΝΙΑ</option>
                 </select>
             </div>
         </form>

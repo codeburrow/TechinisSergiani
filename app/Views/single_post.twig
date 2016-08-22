@@ -57,28 +57,28 @@
                             <iframe src="{{ post.video }}" allowfullscreen="allowfullscreen"  width="500" height="280"></iframe>
                         {% endif %}
 
-                        {% if post.theatreType == 'competition' %}
-                            <h5 class="title-bg" style="margin-top: 50px;">Δηλώστε Συμμετοχή!</h5>
+                        {% if post.theatreType == 4 %}
+                            <h5 class="title-bg" style="margin-top: 50px; text-align: center;">Δηλωστε Συμμετοχη !</h5>
 
-                            <form action="/theatre/contactCompetition" method="post" id="contact-form">
+                            <form style="text-align: center;" action="/theatre/contactCompetition" method="post" id="contact-form">
                                     <div class="input-prepend">
-                                        <label class="span1">Όνομα:</label>
+                                        <label style="text-align: right;" class="span1">Όνομα:</label>
                                         <span class="add-on"><i class="fa fa-user" aria-hidden="true"></i></span>
                                         <input class="span8" name="firstName" id="prependedInput" size="16" type="text" placeholder="πχ: Αλέξανδρος">
                                     </div>
                                     <div class="input-prepend">
-                                        <label class="span1">Επώνυμο:</label>
+                                        <label style="text-align: right;" class="span1">Επώνυμο:</label>
                                         <span class="add-on"><i class="fa fa-user" aria-hidden="true"></i></span>
                                         <input class="span8" name="lastName" id="prependedInput" size="16" type="text" placeholder="πχ: Κούρτης">
                                     </div>
                                     <div class="input-prepend">
-                                        <label class="span1">Email:</label>
+                                        <label style="text-align: right;" class="span1">Email:</label>
                                         <span class="add-on"><i class="fa fa-envelope" aria-hidden="true"></i></span>
                                         <input class="span8" name="email" id="prependedInput" size="16" type="email"
                                                placeholder="πχ: alex@gmail.com">
                                     </div>
                                     <div class="input-prepend">
-                                        <label class="span1">Κινητό:</label>
+                                        <label style="text-align: right;" class="span1">Κινητό:</label>
                                         <span class="add-on"><i class="fa fa-phone" aria-hidden="true"></i></span>
                                         <input class="span8" name="mobile" id="prependedInput" size="16" type="number"
                                                placeholder="πχ: 6943466545">
@@ -89,7 +89,7 @@
                                     <input type="hidden" value="{{ post.title }}" name="postTitle">
 
                                     <div class="input-prepend" style="">
-                                        <div class="span8 offset1">
+                                        <div class="span8 offset2">
                                             <input type="submit" class="btn btn-block btn-large btn-info" value="Συμμετέχω!">
                                         </div>
                                     </div>
