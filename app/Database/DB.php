@@ -22,13 +22,25 @@ class DB
      * @param string $username
      * @param string $password
      */
-    public function __construct($servername = "127.0.0.1", $port = "33060", $dbname = "kourtis", $username = "homestead", $password = "secret")
+//    public function __construct($servername = "127.0.0.1", $port = "33060", $dbname = "kourtis", $username = "homestead", $password = "secret")
+//    {
+//        $this->servername = $servername;
+//        $this->port = $port;
+//        $this->dbname = $dbname;
+//        $this->username = $username;
+//        $this->password = $password;
+//        $this->options = [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'];
+//
+//        $this->connect();
+//    }
+
+    public function __construct()
     {
-        $this->servername = $servername;
-        $this->port = $port;
-        $this->dbname = $dbname;
-        $this->username = $username;
-        $this->password = $password;
+        $this->servername = getenv('HOST');
+        $this->port = getenv('PORT');
+        $this->dbname = getenv('DBNAME');
+        $this->username = getenv('USERNAME');
+        $this->password = getenv('PASSWORD');
         $this->options = [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'];
 
         $this->connect();
@@ -37,7 +49,7 @@ class DB
     public function connect()
     {
         try {
-            $conn = new PDO("mysql:host=$this->servername;port:$this->port;dbname=$this->servername", $this->username, $this->password, $this->options);
+            $conn = new PDO("mysql:host=$this->servername;port:$this->port;dbname=$this->dbname", $this->username, $this->password, $this->options);
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->conn = $conn;
