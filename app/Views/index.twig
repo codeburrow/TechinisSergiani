@@ -1,6 +1,6 @@
 {% extends "master.twig" %}
 
-{% block title %} Kourtaros {% endblock title %}
+{% block title %} Texnis Sergiani {% endblock title %}
 
 {% block content %}
 
@@ -22,15 +22,19 @@
         <!-- Headline Text
         ================================================== -->
         <div class="span4">
-            <img src="/img/test/kourtis.jpg" style="float: right; max-width: 100%; height: auto; margin-bottom: 10px; border: 4px solid darkgrey; border-radius: 15%" alt="author">
+            <img src="/img/test/kourtis_good.jpg" style="float: right; max-width: 100%; height: auto; margin-bottom: 10px; border: 4px solid darkgrey; border-radius: 15%" alt="author">
             <h3 style="padding-bottom: 30px;">
                 My name is Kourtis.
                 <br/>
                 This is my application.
             </h3>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pretium vulputate magna
+            {#<p class="lead">#}
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam pretium vulputate magna
                 sit
                 amet blandit.</p>
+            <p>Cras rutrum, massa non blandit convallis, est lacus gravida enim, eu fermentum ligula orci et tortor.
+                In
+                sit amet nisl ac leo pulvinar molestie. Morbi blandit ultricies ultrices.</p>
             <p>Cras rutrum, massa non blandit convallis, est lacus gravida enim, eu fermentum ligula orci et tortor.
                 In
                 sit amet nisl ac leo pulvinar molestie. Morbi blandit ultricies ultrices.</p>
@@ -46,14 +50,16 @@
         ================================================== -->
         <div class="span12 gallery" style="margin-top: 30px;">
 
-            <h2> Latest Posts </h2>
+            <h2> ΤΕΛΕΥΤΑΙΑ ΑΡΘΡΑ </h2>
 
             <ul id="filterOptions" class="gallery-cats clearfix">
-                <li class="active"><a href="#" class="all">All</a></li>
-                <li><a href="#" class="illustration">Illustration</a></li>
-                <li><a href="#" class="design">Design</a></li>
-                <li><a href="#" class="video">Video</a></li>
-                <li><a href="#" class="web">Web</a></li>
+                <li class="active"><a href="#" class="all">Όλα</a></li>
+                <li><a href="#" class="illustration">Κριτικές</a></li>
+                <li><a href="#" class="design">Ειδήσεις</a></li>
+                <li><a href="#" class="video">Ακροάσεις</a></li>
+                <li><a href="#" class="web">Διαγωνισμοί</a></li>
+                <li><a href="#" class="web">Παραστάσεις</a></li>
+                <li><a href="#" class="web">Συνεντεύξεις</a></li>
             </ul>
 
             <div class="row clearfix">
@@ -65,15 +71,16 @@
                         <span class="gallery-hover-3col hidden-phone hidden-tablet">
                             <span class="gallery-icons">
                                 <a href="img/theatre/{{ post.nameOfPhoto }}" class="item-zoom-link lightbox"
-                                   title="Custom Illustration" data-rel="prettyPhoto"></a>
+                                   title="Μεγάλη Εικόνα" data-rel="prettyPhoto"></a>
                                 <a href="/theatre/{{ post.urlName }}"
                                    class="item-details-link"></a>
                             </span>
                         </span>
-                            <a href="/theatre/{{ post.urlName }}"><img
-                                        src="img/theatre/{{ post.nameOfPhoto }}" alt="Gallery"></a>
+                            <a href="/theatre/{{ post.urlName }}">
+                                <img src="img/theatre/{{ post.nameOfPhoto }}" alt="Gallery">
+                            </a>
                             <span class="project-details">
-                                <a href="/theatre/{{ post.urlName }}"></a>
+                                <a href="/theatre/{{ post.urlName }}">{{ post.title }}</a>
                                 {{ post.summary }}</span>
                         </li>
                     {% endfor %}

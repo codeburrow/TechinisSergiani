@@ -65,7 +65,7 @@ class Router
             foreach ($this->_getUri as $key => $value)
             {
                 //var_dump($value);
-                if ( $found = preg_match("#^$value$#", $path) )
+                if ( $found = preg_match("#^$value$#u", $path) )
                 {
 //                    echo $key . ' => ' . $value; //See what the $path returns
                     

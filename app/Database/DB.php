@@ -22,29 +22,29 @@ class DB
      * @param string $username
      * @param string $password
      */
-//    public function __construct($servername = "127.0.0.1", $port = "33060", $dbname = "kourtis", $username = "homestead", $password = "secret")
-//    {
-//        $this->servername = $servername;
-//        $this->port = $port;
-//        $this->dbname = $dbname;
-//        $this->username = $username;
-//        $this->password = $password;
-//        $this->options = [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'];
-//
-//        $this->connect();
-//    }
-
-    public function __construct()
+    public function __construct($servername = "127.0.0.1", $port = "33060", $dbname = "kourtis", $username = "homestead", $password = "secret")
     {
-        $this->servername = getenv('HOST');
-        $this->port = getenv('PORT');
-        $this->dbname = getenv('DBNAME');
-        $this->username = getenv('USERNAME');
-        $this->password = getenv('PASSWORD');
+        $this->servername = $servername;
+        $this->port = $port;
+        $this->dbname = $dbname;
+        $this->username = $username;
+        $this->password = $password;
         $this->options = [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'];
 
         $this->connect();
     }
+
+//    public function __construct()
+//    {
+//        $this->servername = getenv('HOST');
+//        $this->port = getenv('PORT');
+//        $this->dbname = getenv('DBNAME');
+//        $this->username = getenv('USERNAME');
+//        $this->password = getenv('PASSWORD');
+//        $this->options = [PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'];
+//
+//        $this->connect();
+//    }
 
     public function connect()
     {
