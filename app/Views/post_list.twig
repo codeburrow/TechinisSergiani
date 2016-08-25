@@ -1,6 +1,6 @@
 {% extends "master.twig" %}
 
-{% block title %} Texnis Sergiani {% endblock title %}
+{% block title %} Texnis Sergiani | {{ sector }} {% endblock title %}
 
 {% block content %}
 
@@ -13,6 +13,15 @@
             </form>
         </div>
     </section>
+
+    {#OR#}
+    <form class="form-search align-right">
+        <div class="input-append hidden-phone">
+            <input type="text" class="span2 search-query">
+            <button type="submit" class="btn"><i class="icon-search"></i></button>
+        </div>
+    </form>
+
 
     <!-- Blog Content
         ================================================== -->
